@@ -1,6 +1,6 @@
 <script>
-    import Card from '../components/sendingDataUp/inputUp.svelte'
-    import Lstate from '../components/loopingState.svelte'
+    import Card from '../components/scratch/sendingDataUp/inputUp.svelte'
+    import Lstate from '..//components/scratch/loopingState.svelte'
     let title = "Needs a title"
 </script>
 <Lstate/>

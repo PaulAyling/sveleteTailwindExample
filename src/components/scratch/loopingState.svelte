@@ -1,8 +1,8 @@
 <script>
     // This shows state in use together with a component and slot to format content
-    import { flowers } from "../stores";
-    import Card from '../components/layout/card.svelte'
-    import InputBox from '../components/inputBox.svelte' 
+    import { flowers } from "../../stores";
+    import Card from './layout/card.svelte'
+    import InputBox from './inputBox.svelte' 
 </script>
 
 <div>
