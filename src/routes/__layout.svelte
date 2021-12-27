@@ -3,8 +3,7 @@
 </script>
 
 <main>
-    template
-  <div class="max-w-4xl mx-auto py-8 bg-red-500">
+  <div class="max-w-4xl p-3">
       <slot />
   </div>
 </main>

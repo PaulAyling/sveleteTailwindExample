@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Card from '../components/card.svelte'
+    let title = "Needs a title"
+</script>
+<h1>{title}</h1>
+<p>A demonstation off sending input up via props</p>
+<Card  bind:title={title}/>
