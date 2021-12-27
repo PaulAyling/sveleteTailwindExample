@@ -3,6 +3,7 @@
     import { flowers } from "../../stores";
     import Card from './layout/card.svelte'
     import InputBox from './inputBox.svelte' 
+    import Ddrop from './dDrop.svelte'
 </script>
 
 <div>
@@ -21,6 +22,7 @@
     </ul>
 
 </div>
+<Ddrop/>
 <style>
     h1{
         font-size: 3em;
