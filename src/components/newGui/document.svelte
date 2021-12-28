@@ -1,7 +1,7 @@
 <script>
     // import components from './storeComponents'
     // import storeLevels from './storeLevels'
-    import baskets from  '../storeExample/store'
+    import baskets from  '../arc/storeExample/store'
     const startId = 1
 
 

@@ -1,6 +1,6 @@
 <script>
         import {baskets} from './store'
-        import Input from '../scratch/layout/input.svelte'
+        import Input from '../../scratch/layout/input.svelte'
     console.log('SVELTE STORE:',$baskets)
 </script>
 <div class="rounded-md p-3 m-2">
