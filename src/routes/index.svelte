@@ -1,12 +1,8 @@
 <script>
-    import Card from '../components/scratch/sendingDataUp/inputUp.svelte'
-    import Lstate from '..//components/scratch/loopingState.svelte'
-    import Document from '../components/newGui/document.svelte'
-// import StoreStart from '../components/storeExample/storeStart.svelte'
-    let title = "Needs a title"
+    // load a basic component
+    import Basic from '../components/tutorials/1_UpdateStore/basic.svelte'
+    //Tutorial 1
+    import RenderUpdateState from '../components/tutorials/1_UpdateStore/renderUpdateState.svelte';
 </script>
-<!-- <Lstate/> -->
-<!-- <Card  bind:title={title}/> -->
-<!-- <Document/> -->
-<!-- <StoreStart/> -->
-<Document/>
+<Basic/>
+<RenderUpdateState/>
