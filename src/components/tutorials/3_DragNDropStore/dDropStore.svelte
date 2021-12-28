@@ -1,8 +1,6 @@
 <script>
 	// Inspired by https://svelte.dev/repl/810b0f1e16ac4bbd8af8ba25d5e0deff?version=3.4.2.
 	import {flip} from 'svelte/animate';
-    // import {flowers} from '../../../stores'
-    // console.log('flowers',$flowers)
     import {baskets} from '../../../stores'
     console.log('basket',$baskets)
     let hoveringOverBasket;
@@ -13,7 +11,6 @@
     // the index of the basket from which it is leaving.
 		const data = {basketIndex, itemIndex};
    	event.dataTransfer.setData('text/plain', JSON.stringify(data));
-			console.log('baskets',baskets)
 
 	}
 	
@@ -24,19 +21,20 @@
 		
 		// Remove the item from one basket.
 		// Splice returns an array of the deleted elements, just one in this case.
-		const [item] = baskets[data.basketIndex].items.splice(data.itemIndex, 1);
+		const [item] = $baskets[data.basketIndex].items.splice(data.itemIndex, 1);
 		
     // Add the item to the drop target basket.
-		baskets[basketIndex].items.push(item);
-		baskets = baskets;
+		$baskets[basketIndex].items.push(item);
+		$baskets = $baskets;
 		
 		hoveringOverBasket = null;
 	}
 </script>
 
 <p>Drag a fruit from one basket to another.</p>
+<pr>WORKING with using the stores.js file in roote (could not get to work with other stores files)</pr>
 
-{#each baskets as basket, basketIndex (basket)}
+{#each $baskets as basket, basketIndex (basket)}
   <div animate:flip  >
     <b>{basket.name}</b>
     <ul
