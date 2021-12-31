@@ -1,2 +1,2 @@
 // TASKS
-1. Create new component that allows for drag and drop 
+1. Create a text editable drag n drop component
