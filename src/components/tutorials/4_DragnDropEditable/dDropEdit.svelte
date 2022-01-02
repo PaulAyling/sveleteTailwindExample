@@ -31,13 +31,18 @@
 		
 		hoveringOverBasket = null;
 	}
+    let cnt = 0
 </script>
 
 <p>Drag a fruit from one basket to another.</p>
 
+<!-- <InputBx bind:item={basket.items[itemIndex]}/> -->
+
+
 {#each $baskets as basket, basketIndex (basket)}
   <div animate:flip  >
-    <b>{basket.name}</b>
+    <b>{basket.name}</b>  
+     <InputBx bind:item={basket.name}/>
     <ul
 	  	class:hovering={hoveringOverBasket === basket.name}
 	    on:dragenter={() => hoveringOverBasket = basket.name}
@@ -45,13 +50,13 @@
   		on:drop={event => drop(event, basketIndex)}
   		ondragover="return false"
           class="bg-blue-200">
-	    {#each basket.items as item, itemIndex (item)}
-			  <div class="item" animate:flip>
+          {#each basket.items as item, itemIndex (item)}
+          <div class="item" animate:flip>
 	      	<li
 	    	    draggable={true}
 		  		  on:dragstart={event => dragStart(event, basketIndex, itemIndex)}
 		    	class="">
-                <InputBx bind:item={item}/>
+                {item}
 	    	  </li>
 			  </div>
 	    {/each}
@@ -59,11 +64,12 @@
   </div>
 {/each}
 <h2>The State is being updated {textVal}</h2>
-<!-- <ul>
-    {#each baskets as basket}
+<ul>
+    {#each $baskets as basket}
     <li>{basket.name}</li>
     {/each}
-</ul> -->
+</ul>
+
 
 
 
