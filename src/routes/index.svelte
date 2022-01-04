@@ -11,7 +11,8 @@
     // import CustomStore from '../components/tutorials/7_customStore/customStore.svelte'
     // import ComplexCustomStore from "../components/tutorials/8_customStoreObj/complexCustomStore.svelte";
     // import ComponentStore from "../components/tutorials/9_pmapData/entry.svelte";
-    import ReadAllPmapStores from '../components/tutorials/10_readAllPmapStores/10_entry.svelte'
+    // import ReadAllPmapStores from '../components/tutorials/10_readAllPmapStores/10_entry.svelte'
+    import LoopPapChildren from '../components/tutorials/11_LoopPmapChildren/11_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -22,4 +23,5 @@
 <!-- <CustomStore/> -->
 <!-- <ComplexCustomStore/> -->
 <!-- <ComponentStore/> -->
-<ReadAllPmapStores componentId='1'/>
+<!-- <ReadAllPmapStores componentId='1'/> -->
+<LoopPapChildren componentId='1'/>
