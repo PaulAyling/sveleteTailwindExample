@@ -8,7 +8,10 @@
 // import DDropStore from '../components/tutorials/3_DragNDropStore/dDropStore.svelte'
     // import StoreView from '../components/tutorials/5_logStoreState/inputpm.svelte'
     // import Inputpmp from '../components/tutorials/6_inputpmap/6_inputpmap.svelte'
-    import CustomStore from '../components/tutorials/7_customStore/customStore.svelte'
+    // import CustomStore from '../components/tutorials/7_customStore/customStore.svelte'
+    // import ComplexCustomStore from "../components/tutorials/8_customStoreObj/complexCustomStore.svelte";
+    // import ComponentStore from "../components/tutorials/9_pmapData/entry.svelte";
+    import ReadAllPmapStores from '../components/tutorials/10_readAllPmapStores/10_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -16,4 +19,7 @@
 <!-- <DDropStore/> -->
 <!-- <DDropEdit/> -->
 <!-- <Inputpmp/> -->
-<CustomStore/>
+<!-- <CustomStore/> -->
+<!-- <ComplexCustomStore/> -->
+<!-- <ComponentStore/> -->
+<ReadAllPmapStores componentId='1'/>
