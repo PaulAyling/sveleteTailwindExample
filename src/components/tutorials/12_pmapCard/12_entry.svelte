@@ -1,6 +1,10 @@
 <script>
+    import CardOuter from '../../layout/cardOuter.svelte'
+    import CardHeader from '../12_pmapCard/cardHeader.svelte'
+    import CardBody from '../12_pmapCard/cardBody.svelte'
+
+
     import {components} from '../../../data/componentsStore'
-    import {CardFrame} from '../../layout/cardOuter.svelte'
     import {componentMap} from '../../../data/componentsMap'
     import {authenticatedUser} from '../../../data/authenticatedUser'
     export let componentId
@@ -30,15 +34,11 @@
     const {title,imageUrl, notes} =  $components[componentId].versions[usersVersion]
     const childrenIds = $componentMap[currentViewId].componentHierachy[1].children
 </script>
-<div>
-    <ul>
-        <CardFrame>
-            <li>hello</li>
-        </CardFrame>
 
-
-    </ul>
-</div>
+        <CardOuter>
+            <CardHeader url={url} title={title}/>
+            <CardBody title={title} imageUrl={imageUrl} notes={notes} childrenIds={childrenIds}/>
+        </CardOuter>
 
 
 
