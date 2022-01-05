@@ -15,7 +15,8 @@
     // import LoopPapChildren from '../components/tutorials/11_LoopPmapChildren/11_entry.svelte'
     // import CardEntry from '../components/tutorials/12_pmapCard/12_entry.svelte'
     // import StyledEntry from '../components/tutorials/13_stylingComponent/13_entry.svelte'
-    import Recursion from '../components/tutorials/14_recursion/14_entry.svelte'
+    // import Recursion from '../components/tutorials/14_recursion/14_entry.svelte'
+    import RecursionPmap from '../components/tutorials/15_recursionPmap/15_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -30,4 +31,5 @@
 <!-- <LoopPapChildren componentId='1'/> -->
 <!-- <CardEntry componentId='1'/> -->
 <!-- <StyledEntry/> -->
-<Recursion/>
+<!-- <Recursion/> -->
+<RecursionPmap/>
