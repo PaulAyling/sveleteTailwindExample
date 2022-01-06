@@ -23,7 +23,9 @@
     // import DNDV2 from '../components/tutorials/20_DNDV2/20_entry.svelte'
     // import DNDPmaDta from '../components/tutorials/21_DNDNewData/21_entry.svelte'
     // import DNDPmapAllDta from '../components/tutorials/22_DNDAllPmapData/22_entry.svelte'
-    import DNDComponents from '../components/tutorials/23_DND_Compnents/23_Entry.svelte'
+    // import DNDComponents from '../components/tutorials/23_DND_Compnents/23_Entry.svelte'
+    // import DNDComponents from '../components/tutorials/24_DND_cleaned/24_Entry.svelte'
+    import DNDPmap from '../components/tutorials/25_DND_pmapData/25_Entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -45,4 +47,4 @@
 <!-- <DNDV2/> -->
 <!-- <DNDPmaDta/> -->
 <!-- <DNDPmapAllDta/> -->
-<DNDComponents/>
+<DNDPmap/>
