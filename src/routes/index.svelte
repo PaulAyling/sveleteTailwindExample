@@ -19,7 +19,11 @@
     // import RecursionPmap from '../components/tutorials/15_recursionPmap/15_entry.svelte'
     // import RecursionPmapStore from '../components/tutorials/16_recursionPmapStoresIn/16_entry.svelte'
     // import RecursionPmapStoreOnly from '../components/tutorials/17_RecursiveWithStoreOnly/17_entry.svelte'
-    import RecursionPmapStoreEdit from '../components/tutorials/18_RecursiveWithStoreEdit/18_entry.svelte'
+    // import RecursionPmapStoreEdit from '../components/tutorials/18_RecursiveWithStoreEdit/18_entry.svelte'
+    // import DNDV2 from '../components/tutorials/20_DNDV2/20_entry.svelte'
+    // import DNDPmaDta from '../components/tutorials/21_DNDNewData/21_entry.svelte'
+    // import DNDPmapAllDta from '../components/tutorials/22_DNDAllPmapData/22_entry.svelte'
+    import DNDComponents from '../components/tutorials/23_DND_Compnents/23_Entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -37,4 +41,8 @@
 <!-- <Recursion/> -->
 <!-- <RecursionPmapStore/> -->
 <!-- <RecursionPmapStoreOnly/> -->
-<RecursionPmapStoreEdit/>
+<!-- <RecursionPmapStoreEdit/> -->
+<!-- <DNDV2/> -->
+<!-- <DNDPmaDta/> -->
+<!-- <DNDPmapAllDta/> -->
+<DNDComponents/>
