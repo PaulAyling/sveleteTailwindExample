@@ -16,7 +16,10 @@
     // import CardEntry from '../components/tutorials/12_pmapCard/12_entry.svelte'
     // import StyledEntry from '../components/tutorials/13_stylingComponent/13_entry.svelte'
     // import Recursion from '../components/tutorials/14_recursion/14_entry.svelte'
-    import RecursionPmap from '../components/tutorials/15_recursionPmap/15_entry.svelte'
+    // import RecursionPmap from '../components/tutorials/15_recursionPmap/15_entry.svelte'
+    // import RecursionPmapStore from '../components/tutorials/16_recursionPmapStoresIn/16_entry.svelte'
+    // import RecursionPmapStoreOnly from '../components/tutorials/17_RecursiveWithStoreOnly/17_entry.svelte'
+    import RecursionPmapStoreEdit from '../components/tutorials/18_RecursiveWithStoreEdit/18_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -32,4 +35,6 @@
 <!-- <CardEntry componentId='1'/> -->
 <!-- <StyledEntry/> -->
 <!-- <Recursion/> -->
-<RecursionPmap/>
+<!-- <RecursionPmapStore/> -->
+<!-- <RecursionPmapStoreOnly/> -->
+<RecursionPmapStoreEdit/>

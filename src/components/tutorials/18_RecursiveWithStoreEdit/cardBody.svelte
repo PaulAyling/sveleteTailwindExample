@@ -3,7 +3,7 @@
     export let map
     export let components
     export let authenticatedUser
-    import Card from '../15_recursionPmap/card.svelte'
+    import Card from '../18_RecursiveWithStoreEdit/card.svelte'
     const   testId = 1
 </script>
     <div class="border-md rounded-md bg-blue-300 p-2">

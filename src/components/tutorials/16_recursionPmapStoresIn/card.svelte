@@ -3,7 +3,7 @@
     export let map
     export let components
     export let authenticatedUser
-    import CardBody from '../15_recursionPmap/cardBody.svelte'
+    import CardBody from '../16_recursionPmapStoresIn/cardBody.svelte'
     import CardTemplate from '../../layout/templates/card.svelte'
     const childrenIds = map[id].children
 
@@ -15,7 +15,7 @@
     const currentViewId = getViewId(authenticatedUser.userId)
     console.log('currentViewId',currentViewId)
     //3. GET CORRECT VERSION FOR USER
-    const usersVersion = components[id].usersVersion[1].versionId
+    const usersVersion = components[1].usersVersion[1].versionId
     //4. CREATE DATA FOR COMPONENT
     const allTags = components[id].allTags
     const url = components[id].url
