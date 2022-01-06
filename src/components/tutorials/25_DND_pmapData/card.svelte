@@ -4,19 +4,25 @@
     export let dndData
     import {flip} from 'svelte/animate';
     import Links from './links.svelte'
+    import Header from './header.svelte'
+    import Body from './body.svelte'
+// id = id
+// children = items
+console.log('childrenArr',childrenArr)
 </script>
 
+
 {#each childrenArr as child, childrenArrIndex (child)}
-    <div animate:flip  >
-    <b>{child.name}</b>  
+<div animate:flip  >
+        <Header child={child}/>
     <ul
-        class:hovering={dndData.hoveringOverBasket === child.name}
-        on:dragenter={() => dndData.hoveringOverBasket = child.name}
+        class:hovering={dndData.hoveringOverBasket === child.id}
+        on:dragenter={() => dndData.hoveringOverBasket = child.id}
         on:dragleave={() => dndData.hoveringOverBasket = null}
         on:drop={event => dndData.functions.drop(event, childrenArrIndex)}
         ondragover="return false"
         class="bg-blue-200">
-            <Links arr={child.items} basketIndex={childrenArrIndex} dragStart={dndData.functions.dragStart}/>    
+            <Links arr={child.children} basketIndex={childrenArrIndex} dragStart={dndData.functions.dragStart}/>    
         </ul>
     </div>
 {/each}
