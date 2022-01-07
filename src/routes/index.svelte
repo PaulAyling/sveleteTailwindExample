@@ -25,7 +25,9 @@
     // import DNDPmapAllDta from '../components/tutorials/22_DNDAllPmapData/22_entry.svelte'
     // import DNDComponents from '../components/tutorials/23_DND_Compnents/23_Entry.svelte'
     // import DNDComponents from '../components/tutorials/24_DND_cleaned/24_Entry.svelte'
-    import DNDPmap from '../components/tutorials/25_DND_pmapData/25_Entry.svelte'
+    // import DNDPmap from '../components/tutorials/25_DND_pmapData/25_Entry.svelte'
+    // import DNDPmapAll from '../components/tutorials/26_DND_pmapDataAll/26_Entry.svelte'
+    import DNDMore from '../components/tutorials/27_DND_More/27_Entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -45,6 +47,9 @@
 <!-- <RecursionPmapStoreOnly/> -->
 <!-- <RecursionPmapStoreEdit/> -->
 <!-- <DNDV2/> -->
+<!-- <DNDComponents/> -->
 <!-- <DNDPmaDta/> -->
 <!-- <DNDPmapAllDta/> -->
-<DNDPmap/>
+<!-- <DNDPmap/> -->
+<!-- <DNDPmapAll/> -->
+<DNDMore/>

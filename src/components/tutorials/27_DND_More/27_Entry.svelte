@@ -1,19 +1,8 @@
 <script>
 	import {flip} from 'svelte/animate';
     import {baskets} from '../../../stores'
-	import {componentMap} from './store'
-	import Card from './card.svelte'
-	import Links from './links.svelte' 
-	//view Store
-	// componentMap.subscribe(value => {
-	// 	console.log('New Store:',$componentMap)
-	// })
-	// baskets.subscribe(value => {
-	// 	console.log('OLD Store:',$baskets)
-	// })
-
-// id = name
-// children = items
+	import CardBody from './cardBody.svelte'
+	import Links from './header.svelte' 
 	//DND functions
 	function dragStart(event, basketIndex, itemIndex) {
 		const data = {basketIndex, itemIndex};
@@ -23,10 +12,10 @@
 		event.preventDefault();
 		const json = event.dataTransfer.getData("text/plain");
 		const data = JSON.parse(json);
-		const [item] = $componentMap[data.basketIndex].items.splice(data.itemIndex, 1);
+		const [item] = $baskets[data.basketIndex].items.splice(data.itemIndex, 1);
 		// Add the item to the drop target basket.
-		$componentMap[basketIndex].items.push(item);
-		$componentMap = $componentMap;
+		$baskets[basketIndex].items.push(item);
+		$baskets = $baskets;
 		hoveringOverBasket = null;
 	}
 	//initialiation variables
@@ -41,5 +30,5 @@
 		'hoveringOverBasket':hoveringOverBasket
 	}
 </script>
-	<p>put pmap data into the dnd interface</p>
-<Card  parentIndex='2' childrenArr={$componentMap}  dndData={dndData}/>
+	<p>The aim of this is to take the dnd interface and split it into components so it can be used for the next step</p>
+	<CardBody  parentIndex='2' childrenArr={$baskets}  dndData={dndData}/>

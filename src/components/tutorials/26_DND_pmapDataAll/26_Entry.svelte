@@ -41,5 +41,7 @@
 		'hoveringOverBasket':hoveringOverBasket
 	}
 </script>
-	<p>put pmap data into the dnd interface</p>
-<Card  parentIndex='2' childrenArr={$componentMap}  dndData={dndData}/>
+	<p>Expand to use all pmap map data</p>
+<Card  parentIndex='2' childrenArr={$componentMap}  dndData={dndData}>
+	<Links />    
+</Card>

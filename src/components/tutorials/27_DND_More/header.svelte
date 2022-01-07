@@ -12,7 +12,7 @@
         draggable={true}
             on:dragstart={event => dragStart(event, basketIndex, itemIndex)}
         class=" p-1 m-1">
-        {item.id}
+        {item}
         </li>
         </div>
 {/each}
