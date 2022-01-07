@@ -20,7 +20,7 @@ export const flowers = writable([
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
   },
 ])
-
+//d
 export const baskets = writable([
   {
     "name": "Basket 1",
