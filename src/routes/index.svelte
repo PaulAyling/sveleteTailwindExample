@@ -27,13 +27,20 @@
     // import DNDComponents from '../components/tutorials/24_DND_cleaned/24_Entry.svelte'
     // import DNDPmap from '../components/tutorials/25_DND_pmapData/25_Entry.svelte'
     // import DNDPmapAll from '../components/tutorials/26_DND_pmapDataAll/26_Entry.svelte'
-    import DNDMore from '../components/tutorials/27_DND_More/27_Entry.svelte'
+    // import DNDMore from '../components/tutorials/27_DND_More/27_Entry.svelte'
+    // import DNDExample from '../components/tutorials/dnd/1_dndExample/1_entry.svelte'
+    // import DNDExample2 from '../components/tutorials/dnd/2_dndReorg/2_entry.svelte'
+    // import ExtFunction from '../components/tutorials/29_externalFunction/29_entry.svelte'
+    // import DNDStore from '../components/tutorials/30_DNDStore/30_entry.svelte'
+    // import SDND_1 from '../components/scratch/1_DND/1_entry.svelte'
+    import storeEx from '../components/tutorials/40_storeExample/40_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
 <!-- <DDrop/> -->
 <!-- <DDropStore/> -->
 <!-- <DDropEdit/> -->
+<!-- <StoreView/> -->
 <!-- <Inputpmp/> -->
 <!-- <CustomStore/> -->
 <!-- <ComplexCustomStore/> -->
@@ -52,4 +59,7 @@
 <!-- <DNDPmapAllDta/> -->
 <!-- <DNDPmap/> -->
 <!-- <DNDPmapAll/> -->
-<DNDMore/>
+<!-- <DNDMore/> -->
+<!-- <ExtFunction/> -->
+<!-- <DNDExample2/> -->
+<storeEx/>
