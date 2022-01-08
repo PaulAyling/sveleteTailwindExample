@@ -19,7 +19,7 @@
     // import RecursionPmap from '../components/tutorials/15_recursionPmap/15_entry.svelte'
     // import RecursionPmapStore from '../components/tutorials/16_recursionPmapStoresIn/16_entry.svelte'
     // import RecursionPmapStoreOnly from '../components/tutorials/17_RecursiveWithStoreOnly/17_entry.svelte'
-    // import RecursionPmapStoreEdit from '../components/tutorials/18_RecursiveWithStoreEdit/18_entry.svelte'
+    import RecursionPmapStoreEdit from '../components/tutorials/18_RecursiveWithStoreEdit/18_entry.svelte'
     // import DNDV2 from '../components/tutorials/20_DNDV2/20_entry.svelte'
     // import DNDPmaDta from '../components/tutorials/21_DNDNewData/21_entry.svelte'
     // import DNDPmapAllDta from '../components/tutorials/22_DNDAllPmapData/22_entry.svelte'
@@ -33,7 +33,11 @@
     // import ExtFunction from '../components/tutorials/29_externalFunction/29_entry.svelte'
     // import DNDStore from '../components/tutorials/30_DNDStore/30_entry.svelte'
     // import SDND_1 from '../components/scratch/1_DND/1_entry.svelte'
-    import storeEx from '../components/tutorials/40_storeExample/40_entry.svelte'
+    // import storeEx from '../components/tutorials/40_storeExample/40_entry.svelte'
+    // import DND20 from '../components/tutorials2/20_DNDV2/20_entry.svelte'
+    // import Basic1 from '../components/tutorials2/30_BasicUpdates/30_entry.svelte'
+    import Twillo from '../components/tutorials2/31_exTwillo/31_entry.svelte'
+    import Twillo2 from '../components/tutorials2/32_exTwillo/32_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -62,4 +66,4 @@
 <!-- <DNDMore/> -->
 <!-- <ExtFunction/> -->
 <!-- <DNDExample2/> -->
-<storeEx/>
+<Twillo2/>
