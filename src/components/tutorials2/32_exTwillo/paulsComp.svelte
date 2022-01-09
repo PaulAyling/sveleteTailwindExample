@@ -19,5 +19,5 @@
     </ul>
     <!-- Function invoked with parameter -->
     <button on:click={()=> addObj(obj)}>Add New name</button>
-
+<!-- hjk -->
 </div>
