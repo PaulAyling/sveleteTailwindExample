@@ -1,7 +1,7 @@
 <script>
 	// Inspired by https://svelte.dev/repl/810b0f1e16ac4bbd8af8ba25d5e0deff?version=3.4.2.
 	import {flip} from 'svelte/animate';
-    import {baskets} from '../../../stores'
+    import {baskets} from '../../../../../stores'
 	import {dragStart} from './dragFunctions'
 	import Droppable from './Droppable.svelte'
 	// FUNCTIONS TO MANUPULATE THE ITEMS (with side effects (cannot move)))
@@ -21,7 +21,9 @@
 	const startingId = 1
 
 </script>
-{#each $baskets as basket, basketIndex (basket)}
+<h1>Hello</h1>
+<Droppable id = {startingId} bind:hoveringOverBasket={hoveringOverBasket}/>
+<!-- {#each $baskets as basket, basketIndex (basket)}
   <div animate:flip  >
     <b>{basket.name}</b>  
     <ul
@@ -43,8 +45,7 @@
 	    {/each}
     </ul>
   </div>
-{/each}
-<Droppable id = {startingId}/>
+{/each} -->
 
 <style>
 	.hovering {

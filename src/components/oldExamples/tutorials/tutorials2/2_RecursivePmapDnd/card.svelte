@@ -2,12 +2,12 @@
     export let id
     export let map
     export let authenticatedUser
-    import {components} from '../../../data/componentsStore'
-    import Input from '../../layout/input.svelte'
+    import {components} from '../../../../../data/componentsStore'
+    import Input from '../../../../layout/input.svelte'
 
 
     import CardBody from '../18_RecursiveWithStoreEdit/cardBody.svelte'
-    import CardTemplate from '../../layout/templates/card.svelte'
+    import CardTemplate from '../../../../layout/templates/card.svelte'
 
     components.subscribe(value => {
         	console.log('Store Components:', value)

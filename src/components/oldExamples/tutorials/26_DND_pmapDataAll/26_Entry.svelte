@@ -2,8 +2,8 @@
 	import {flip} from 'svelte/animate';
     import {baskets} from '../../../stores'
 	import {componentMap} from './store'
-	import Card from './card.svelte'
-	import Links from './links.svelte' 
+	import Draggable from './Draggable.svelte'
+	import Droppable from './Droppable.svelte' 
 	//view Store
 	// componentMap.subscribe(value => {
 	// 	console.log('New Store:',$componentMap)
@@ -40,8 +40,10 @@
 		},
 		'hoveringOverBasket':hoveringOverBasket
 	}
+	const startingId = 1
 </script>
 	<p>Expand to use all pmap map data</p>
-<Card  parentIndex='2' childrenArr={$componentMap}  dndData={dndData}>
-	<Links />    
-</Card>
+<Draggable  startingId=1 childrenArr={$componentMap}  dndData={dndData}>
+	child content here
+	<Droppable/>
+</Draggable>

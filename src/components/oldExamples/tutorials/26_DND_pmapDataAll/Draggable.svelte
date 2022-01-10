@@ -3,7 +3,7 @@
     export let childrenArr
     export let dndData
     import {flip} from 'svelte/animate';
-    import Links from './links.svelte'
+    import Links from './Droppable.svelte'
     import Header from './header.svelte'
     import Body from './body.svelte'
 // id = id
@@ -14,7 +14,6 @@ console.log('childrenArr',childrenArr)
 
 {#each childrenArr as child, childrenArrIndex (child)}
 <div animate:flip  >
-        {child.id}
     <ul
         class:hovering={dndData.hoveringOverBasket === child.id}
         on:dragenter={() => dndData.hoveringOverBasket = child.id}
@@ -22,7 +21,7 @@ console.log('childrenArr',childrenArr)
         on:drop={event => dndData.functions.drop(event, childrenArrIndex)}
         ondragover="return false"
         class="bg-blue-200">
-        <Links arr={child.children} basketIndex={childrenArrIndex} dragStart={dndData.functions.dragStart}/>
+        <slot  startingId=1 childrenArr={$componentMap} />
     </ul>
     </div>
 {/each}

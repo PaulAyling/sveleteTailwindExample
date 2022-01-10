@@ -1,6 +1,6 @@
 <script>
     export let id
-    import {baskets} from '../../../stores'
+    import {baskets} from '../../../../../stores'
 
     const currentArray = $baskets[id]
 
