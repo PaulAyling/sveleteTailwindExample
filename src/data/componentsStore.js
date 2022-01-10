@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-export const components = writable({
+export const cards = writable({
     1: 
       {
       componentId: 1,

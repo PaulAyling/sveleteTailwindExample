@@ -1,5 +1,6 @@
-// All the users for the application
-const users = {
+import { writable } from 'svelte/store'
+
+export const users = writable({
     1:{
     'userId':1,
     'name':'Paul',
@@ -10,6 +11,4 @@ const users = {
     'name':'karoline',
     'documentViews':[2]
     },
-    }
-
-export { users }
+    })
