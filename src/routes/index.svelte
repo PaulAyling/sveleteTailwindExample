@@ -40,7 +40,8 @@
     // import Twillo2 from '../components/tutorials2/32_exTwillo/32_entry.svelte'
     // import DND2 from '../components/tutorials2/21_DND_components/21_entry.svelte'
     // import StoreSubset from '../components/oldExamples/tutorials/41_statePartsAsProps/41_entry.svelte'
-    import DNDPmapOrig from '../components/oldExamples/tutorials/50_DNDPmapData/50_entry.svelte'
+    // import DNDPmapOrig from '../components/oldExamples/tutorials/50_DNDPmapData/50_entry.svelte'
+    import PMAPNewDesign from '../components/exampleShowcase/2_pmapNewDesign/2_entry.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -71,4 +72,5 @@
 <!-- <DNDExample2/> -->
 <!-- <DND2/> -->
 <!-- <StoreSubset/> -->
-<DNDPmapOrig/>
+<!-- <DNDPmapOrig/> -->
+<PMAPNewDesign/>
