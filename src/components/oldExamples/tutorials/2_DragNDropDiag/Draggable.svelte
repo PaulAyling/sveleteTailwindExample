@@ -5,7 +5,6 @@
     export let drop
     import Droppable from './Droppable.svelte'
     import {flip} from 'svelte/animate';
-    console.log()
 
 </script>
 {#each baskets as basket, basketIndex (basket)}

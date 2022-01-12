@@ -1,17 +1,21 @@
 <script>
+    export let hoveringOverCard
+    export let childArr
     export let parentIndex
-    export let childrenArr
     export let dndData
     import {flip} from 'svelte/animate';
+    console.log('nnnnhoveringOverCard',hoveringOverCard)
+    console.log('dndData',dndData)
+    
 </script>
 
-{#each childrenArr as child, childrenArrIndex (child)}
+{#each childArr as child, childIx (child)}
     <div animate:flip  >
     <ul
-        class:hovering={dndData.hoveringOverBasket === child.name}
-        on:dragenter={() => dndData.hoveringOverBasket = child.name}
-        on:dragleave={() => dndData.hoveringOverBasket = null}
-        on:drop={event => dndData.functions.drop(event, childrenArrIndex)}
+        class:hovering={hoveringOverCard === child.name}
+        on:dragenter={() => hoveringOverCard = child.name}
+        on:dragleave={() => hoveringOverCard = null}
+        on:drop={event => dndData.functions.drop(event, childIx)}
         ondragover="return false"
         class="bg-blue-200">
             <slot/>  

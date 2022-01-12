@@ -41,8 +41,8 @@
     // import DND2 from '../components/tutorials2/21_DND_components/21_entry.svelte'
     // import StoreSubset from '../components/oldExamples/tutorials/41_statePartsAsProps/41_entry.svelte'
     // import DNDPmapOrig from '../components/oldExamples/tutorials/50_DNDPmapData/50_entry.svelte'
-    // import PMAPNewDesign from '../components/exampleShowcase/2_pmapNewDesign/2_entry.svelte'
-    import DNDDiag from '../components/oldExamples/tutorials/2_DragNDropDiag/dDrop.svelte'
+    import PMAPNewDesign from '../components/exampleShowcase/2_pmapNewDesign/2_entry.svelte'
+    // import DNDDiag from '../components/oldExamples/tutorials/2_DragNDropDiag/dDrop.svelte'
 </script>
 <!-- <Basic/> -->
 <!-- <RenderUpdateState/> -->
@@ -74,5 +74,5 @@
 <!-- <DND2/> -->
 <!-- <StoreSubset/> -->
 <!-- <DNDPmapOrig/> -->
-<!-- <PMAPNewDesign/> -->
-<DNDDiag/>
+<PMAPNewDesign/>
+<!-- <DNDDiag/> -->
