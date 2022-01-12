@@ -50,7 +50,8 @@
 
 	}
 </script>
-<p>Drag a fruit from one basket to another.</p>
+
+<p>Drag and drop in components</p>
 <Draggable bind:hoveringOverBasket={hoveringOverBasket} bind:baskets={baskets} dragStart={dragStart} drop={drop}/>
 <style>
 	.hovering {

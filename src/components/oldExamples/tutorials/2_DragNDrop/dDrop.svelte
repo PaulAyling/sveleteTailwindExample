@@ -9,7 +9,7 @@
     },
     {
       "name": "Basket 2",
-      "items": ["Banana", "Apple"]
+      "items": ["Banana", "Apple","walnut","peanut"]
     },
 		{
       "name": "Basket 3",

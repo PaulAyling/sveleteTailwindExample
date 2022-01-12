@@ -3,6 +3,7 @@
     export let baskets
     export let dragStart
     export let drop
+    import Droppable from './Droppable.svelte'
     import {flip} from 'svelte/animate';
     console.log()
 
@@ -17,17 +18,7 @@
   		on:drop={event => drop(event, basketIndex)}
   		ondragover="return false"
           class="bg-blue-200">
-	    {#each basket.items as item, itemIndex (item)}
-			  <div class="item" animate:flip>
-				  <!-- {console.log('item:',item,'itemIndex:',itemIndex)} -->
-	      	<li
-	    	    draggable={true}
-		  		  on:dragstart={event => dragStart(event, basketIndex, itemIndex)}
-		    	class="">
-		      	{item}
-	    	  </li>
-			  </div>
-	    {/each}
+          <Droppable  bind:arr={basket.items} basketIndex={basketIndex} dragStart={dragStart} /> 
     </ul>
   </div>
 {/each}
