@@ -1,5 +1,5 @@
 <script>
-    export let parentIndex
+    export let hoveringOverCardId
     export let childrenArr
     export let dndData
     import {flip} from 'svelte/animate';
@@ -9,9 +9,9 @@
 {#each childrenArr as child, childrenArrIndex (child)}
     <div animate:flip  >
     <ul
-        class:hovering={dndData.hoveringOverBasket === child.name}
-        on:dragenter={() => dndData.hoveringOverBasket = child.name}
-        on:dragleave={() => dndData.hoveringOverBasket = null}
+        class:hovering={dndData.hoveringOverCard === child.name}
+        on:dragenter={() => dndData.hoveringOverCard = child.name}
+        on:dragleave={() => dndData.hoveringOverCard = null}
         on:drop={event => dndData.functions.drop(event, childrenArrIndex)}
         ondragover="return false"
         class="bg-blue-200">

@@ -1,7 +1,7 @@
 <script>
-    import {components} from '../../../data/componentsStore'
-    import {authenticatedUser} from '../../../data/authenticatedUser'
-    components.subscribe(value => {
+    import {cards} from '../../../../data/componentsStore'
+    import {authenticatedUser} from '../../../../data/authenticatedUser'
+    cards.subscribe(value => {
         	console.log('Store Components:', value)
         	console.log('Store Components:', value[1].usersVersion[1].versionId)
         });
