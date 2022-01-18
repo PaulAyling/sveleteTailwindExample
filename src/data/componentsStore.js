@@ -1,4 +1,6 @@
 import { writable } from 'svelte/store'
+import {authenticatedUser} from '../../../data/authenticatedUser'
+
 
 export const cards = writable({
     1: 
@@ -69,3 +71,10 @@ export const cards = writable({
           },
     }
   })
+
+  export const getUsersCard = (cardId)=>{
+    userId = authenticatedUser.userId
+    usersViewId=1
+    
+
+  }

@@ -4,8 +4,6 @@
     export let parentIndex
     export let dndData
     import {flip} from 'svelte/animate';
-    console.log('nnnnhoveringOverCard',hoveringOverCard)
-    console.log('dndData',dndData)
     
 </script>
 

@@ -7,7 +7,7 @@
     export let drop
 
     import {cards} from '../../../data/componentsStore'
-    import {cardMap} from './storeCardMap'
+    import {cardMap} from './stores/cardMap'
 
     import Tags from './Tags.svelte'
     import Draggable from './Draggable.svelte'

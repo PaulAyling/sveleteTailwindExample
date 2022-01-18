@@ -2,9 +2,9 @@
     import Header from './Header.svelte'
     import Body from './Body.svelte'
 
-    import {cardMap} from './storeCardMap'
+    import {cardMap} from './stores/cardMap'
     //FOR PROPS DATA
-    import {cards} from '../../../data/componentsStore'
+    import {cards} from '../../../data/componentsStore' //will need to expand when I bring view back in
     import {authenticatedUser} from '../../../data/authenticatedUser'
 
   //   cardMap.subscribe(value => {
@@ -42,11 +42,11 @@
     const curUsersVersionNumber = curCard.usersVersion[$authenticatedUser.userId].versionId
     $:allTags=$cards[startingId].allTags
     // this is the card that the drag is dragged over
-   
+
     
     
 </script>
-<Header id={startingId} curUsersVersionNumber={curUsersVersionNumber} curCard={curCard}/>
+<Header id={startingId} curUsersVersionNumber={curUsersVersionNumber}/>
 <Body 
   id={startingId} 
   childArr={childArr} 
