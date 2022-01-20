@@ -2,17 +2,12 @@
     export let id
     export let childArr
     export let curUsersVersionNumber
-    export let hoveringOverCard
-    export let dragStart
-    export let drop
-
+    import {pointerOverCard} from './stores/cardLayout'
     import {cards} from '../../../data/componentsStore'
-    import {cardMap} from './stores/cardMap'
-
     import Tags from './Tags.svelte'
     import Draggable from './Draggable.svelte'
 
-    console.log('hoveringOverCard',hoveringOverCard)
+    console.log('hoveringOverCard',pointerOverCard)
     console.log('childArr',childArr)
     $:allTags = $cards[id].allTags
     $:imageUrl = $cards[id].versions[curUsersVersionNumber].imageUrl
@@ -20,5 +15,5 @@
 </script>
     <Tags bind:allTags={allTags}/>
     <img src="{imageUrl}" alt="{title}">
-    <!-- <Draggable bind:hoveringOverCard={hoveringOverCard}/> -->
-    <Draggable bind:hoveringOverCard={hoveringOverCard} bind:childArr={childArr} dragStart={dragStart} drop={drop}/>
+    <!-- GOT TO HERE -->
+    <!-- <Draggable bind:hoveringOverCard={$pointerOverCard} bind:childArr={childArr}/> -->
