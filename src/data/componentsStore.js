@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import {authenticatedUser} from '../../../data/authenticatedUser'
+import {authenticatedUser} from './authenticatedUser'
 
 
 export const cards = writable({
