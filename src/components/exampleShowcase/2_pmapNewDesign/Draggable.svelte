@@ -1,33 +1,36 @@
 <script>
-    export let hoveringOverCard
-    export let childArr
-    export let parentIndex
-    export let dndData
-    import {flip} from 'svelte/animate';
-    
+	export let cardId
+	export let pointerOverCard
+	export let cardLayout
+	import {drop} from './stores/tools'
+	import Droppable from './Droppable.svelte'
+  import {flip} from 'svelte/animate';
+	
+	$: loopingArr = cardLayout[cardId].children
 </script>
-
-{#each childArr as child, childIx (child)}
-    <div animate:flip  >
+{#each loopingArr as childId, cardIndex (childId)}
+  <div animate:flip  >
+    <b>{childId}</b>
     <ul
-        class:hovering={hoveringOverCard === child.name}
-        on:dragenter={() => hoveringOverCard = child.name}
-        on:dragleave={() => hoveringOverCard = null}
-        on:drop={event => dndData.functions.drop(event, childIx)}
-        ondragover="return false"
-        class="bg-blue-200">
-            <slot/>  
-        </ul>
-    </div>
+	  	class:hovering={pointerOverCard === childId}
+	    on:dragenter={() => pointerOverCard = childId}
+      on:dragleave={() => pointerOverCard = null}
+  		on:drop={event => drop(event, childId)}
+  		ondragover="return false"
+          class="bg-blue-200">
+          <Droppable  
+					cardId={childId} 
+					bind:pointerOverCard={pointerOverCard} 
+					cardIndex={cardIndex} />
+    </ul>
+  </div>
 {/each}
+
+
+
 <style>
 	.hovering {
 		border-color: orange;
-	}
-
-	li:hover {
-		background: orange;
-		color: white;
 	}
   ul {
 		border: solid lightgray 1px;

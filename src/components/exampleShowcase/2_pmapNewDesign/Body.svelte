@@ -2,7 +2,7 @@
     export let id
     export let childArr
     export let curUsersVersionNumber
-    import {pointerOverCard} from './stores/cardLayout'
+    import {pointerOverCard,cardLayout} from './stores/cardLayout'
     import {cards} from '../../../data/componentsStore'
     import Tags from './Tags.svelte'
     import Draggable from './Draggable.svelte'
@@ -16,4 +16,7 @@
     <Tags bind:allTags={allTags}/>
     <img src="{imageUrl}" alt="{title}">
     <!-- GOT TO HERE -->
-    <!-- <Draggable bind:hoveringOverCard={$pointerOverCard} bind:childArr={childArr}/> -->
+    <Draggable 
+    cardId={id} 
+    bind:pointerOverCard={$pointerOverCard}  						
+    bind:cardLayout={$cardLayout} />
