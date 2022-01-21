@@ -1,5 +1,18 @@
 import { writable } from 'svelte/store'
+import {authenticatedUser} from './authenticatedUser'
+import {users} from './users'
+import {dictToKeyArray} from '../../../../functions/utilities/dictFn'
+import {findSharedVal} from '../../../../functions/utilities/arrayFn'
+import { get } from 'svelte/store';
 
+//Methods
+
+const authenticatedUser_snp = get(authenticatedUser )
+const users_snp = get(users)
+
+
+
+//Data
 export const fullCardLayout = {
     1:{
         'docViewId':1,
@@ -53,7 +66,19 @@ export const fullCardLayout = {
             },
         },     
 }
-const layoutOnly = fullCardLayout[1].layout
+
+//Methods
+const getUsersDocViewId = ()=>{
+    // get the correct view for the authenticated user
+    const userId = authenticatedUser_snp.userId             
+    const usersViews = users_snp[userId].documentViews  //all the document views the users has created
+    const docViews = dictToKeyArray(fullCardLayout) //all the views in the current document
+    return findSharedVal(usersViews,docViews)
+}
+
+const layoutOnly = fullCardLayout[getUsersDocViewId()].layout
 export const pointerOverCard = writable(null)
 export const cardLayout = writable(layoutOnly)
+
+
 
