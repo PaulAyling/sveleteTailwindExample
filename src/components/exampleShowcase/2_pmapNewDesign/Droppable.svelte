@@ -15,12 +15,14 @@
 <Body cardId = {cardId}/>
 {#each loopingArr as childId, cardIndex (childId)}
   <div animate:flip  >
+	  {childId}
     <ul class:hovering={pointerOverCard === childId}
 	    on:dragenter={() => pointerOverCard = childId}
     	on:dragleave={() => pointerOverCard = null}
   		on:drop={event => drop(event, childId)}
   		ondragover="return false"
         class="bg-blue-200">
+		somthing
 	</ul>
          <Card cardId={childId} cardIndex={cardIndex}/>
 					
