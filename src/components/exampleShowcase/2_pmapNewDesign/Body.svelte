@@ -1,22 +1,14 @@
 <script>
-    export let id
-    export let childArr
-    export let curUsersVersionNumber
+    export let cardId
     import {pointerOverCard,cardLayout} from './stores/cardLayout'
-    import {cards} from '../../../data/componentsStore'
+    import {cards} from './stores/cards'
     import Tags from './Tags.svelte'
-    import Draggable from './Draggable.svelte'
+    import Droppable from './Droppable.svelte'
 
-    console.log('hoveringOverCard',pointerOverCard)
-    console.log('childArr',childArr)
-    $:allTags = $cards[id].allTags
-    $:imageUrl = $cards[id].versions[curUsersVersionNumber].imageUrl
-    $:title = $cards[id].versions[curUsersVersionNumber].title
+
+    $:imageUrl = $cards[cardId].imageUrl
+    $:title = $cards[cardId].title
 </script>
-    <Tags bind:allTags={allTags}/>
+    <Tags cardId={cardId}/>
     <img src="{imageUrl}" alt="{title}">
     <!-- GOT TO HERE -->
-    <Draggable 
-    cardId={id} 
-    bind:pointerOverCard={$pointerOverCard}  						
-    bind:cardLayout={$cardLayout} />

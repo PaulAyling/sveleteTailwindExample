@@ -1,42 +1,42 @@
 <script>
 	export let cardId
-	export let cardIndex
-// 	export let arr
-	import {dragStart} from './stores/tools'
-	import {cardLayout} from './stores/cardLayout'
-	import {flip} from 'svelte/animate';
-	$: loopingArr = $cardLayout[cardId].children
+	export let pointerOverCard
+	export let cardLayout
+
+	import {drop} from './stores/tools'
+	import Header from './Header.svelte'
+	import Body from './Body.svelte'
+	import Card from './Card.svelte'
+   import {flip} from 'svelte/animate';
+	
+	$: loopingArr = cardLayout[cardId].children
 </script>
-{#each loopingArr as childId, childIndex (childId)}
-	<div class="item" animate:flip>
-		<li
-			draggable={true}
-			on:dragstart={(event) => dragStart(event, cardId, childIndex)}>
-            <!-- <slot item={item}/> -->
-<!-- 		CONTENT HERE				 -->
-        {childId}
-		</li>
-	</div>
+<Header id={cardId}/>
+<Body cardId = {cardId}/>
+{#each loopingArr as childId, cardIndex (childId)}
+  <div animate:flip  >
+    <ul class:hovering={pointerOverCard === childId}
+	    on:dragenter={() => pointerOverCard = childId}
+    	on:dragleave={() => pointerOverCard = null}
+  		on:drop={event => drop(event, childId)}
+  		ondragover="return false"
+        class="bg-blue-200">
+	</ul>
+         <Card cardId={childId} cardIndex={cardIndex}/>
+					
+  </div>
 {/each}
 
 
 
 <style>
-	.item {
-		display: inline; /* required for flip to work */
-
+	.hovering {
+		border-color: orange;
 	}
-	li {
-		background-color: lightcoral;
-        padding:0 3px 0 3px;
-		cursor: pointer;
-		display: inline-block;
-		margin-right: 10px;
-        border-radius: 3px;
-		
-	}
-	li:hover {
-		background: orange;
-		color: white;
+  ul {
+		border: solid lightgray 1px;
+		display: flex; /* required for drag & drop to work when .item display is inline */
+		height: 40px; /* needed when empty */
+		padding: 10px;
 	}
 </style>

@@ -13,28 +13,31 @@
 <h1>Svelte component design for this app</h1>
 <article class="flex flex-col">
     <div class="{docStyle} {containerStyle}">Document
-        <div class=" {headerStyle} {containerStyle}">Header</div>
+        <div class=" {droppableStyle} {containerStyle}">DROPPABLE</div>
+        <div class="m-6 {headerStyle} {containerStyle}">Header</div>
         <h2>"TITLE OF DOCUMENT - About Transportation" - this zone is not droppable</h2>
-        <div class="{bodyStyle} {containerStyle}">Body</div>
-        <div class="ml-6 {droppableStyle} {containerStyle}">DROPPABLE</div>
+        <div class="m-6 {bodyStyle} {containerStyle}">Body</div>
         <div class="ml-10 {draggableStyle} {containerStyle}">DRAGGABLE</div>
+
         <div class="ml-16 bg-blue-700 {cardStyle} {containerStyle}">CARD
-            <div class="ml-6 {headerStyle} {containerStyle}">Header</div>
-            <h2>"Bikes"</h2>
-            <div class="ml-6 {bodyStyle} {containerStyle}">Body</div>
-            <div class="ml-10 {droppableStyle} {containerStyle}">DROPPABLE</div>
+            <div class=" {droppableStyle} {containerStyle}">DROPPABLE</div>
+            <div class="m-6 {headerStyle} {containerStyle}">Header</div>
+            <h2>"TITLE OF DOCUMENT - About Transportation" - this zone is not droppable</h2>
+            <div class="m-6 {bodyStyle} {containerStyle}">Body</div>
             <div class="ml-14 {draggableStyle} {containerStyle}">DRAGGABLE</div>
+
             <div class="ml-20  bg-blue-500 mt-1 {cardStyle} {containerStyle}">CARD
-                <div class=" {headerStyle} {containerStyle}">Header</div>
+                <div class=" {droppableStyle} {containerStyle}">DROPPABLE</div>
+                <div class="m-6 {headerStyle} {containerStyle}">Header</div>
                 <h2>"Mountain bikes"</h2>
                 <div class=" {bodyStyle} {containerStyle}">Body</div>
-                <div class="ml-6 {droppableStyle} {containerStyle}">DROPPABLE</div>
                 <div class="ml-10 {draggableStyle} {containerStyle}">DRAGGABLE</div>
+                
                 <div class="ml-20   bg-blue-400 {cardStyle} {containerStyle}">CARD
-                    <div class="{headerStyle} {containerStyle}">Header</div>
+                    <div class=" {droppableStyle} {containerStyle}">DROPPABLE</div>
+                    <div class="m-6 {headerStyle} {containerStyle}">Header</div>
                     "Trex 632"
                     <div class=" {bodyStyle} {containerStyle}">Body</div>
-                    <div class="ml-6 {droppableStyle} {containerStyle}">DROPPABLE</div>
                     <div class="ml-10 {draggableStyle} {containerStyle}">DRAGGABLE</div>
                 </div>
             </div>
