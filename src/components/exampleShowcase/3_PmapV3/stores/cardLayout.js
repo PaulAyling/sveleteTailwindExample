@@ -13,7 +13,6 @@ const users_snp = get(users)
 export const fullCardLayout = {
     1:{
         'docViewId':1,
-        'allCardIds':[1,2,3],
         'docId':1, 
 		'apexCardId':1,
         'layout':
@@ -36,7 +35,7 @@ export const fullCardLayout = {
                 'cardId':3,
                 'versionId':1,
                 'parentId':1,
-                'children':[5,6], 
+                'children':[5], 
                 'siblings':[], 
                 'level':'word'},
 			4:{
@@ -50,7 +49,7 @@ export const fullCardLayout = {
                 'cardId':5,
                 'versionId':1,
                 'parentId':1,
-                'children':[], 
+                'children':[6], 
                 'siblings':[], 
                 'level':'word'},
             6:{

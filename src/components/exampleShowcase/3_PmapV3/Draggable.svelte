@@ -12,7 +12,7 @@
 		<li
 			draggable={true}
 			on:dragstart={(event) => dragStart(event, cardId, cardIndex)}>
-        {childId} FROM DRAGGABLE.JS
+        <!-- {childId} FROM DRAGGABLE.JS -->
 		<Card cardId={childId}/> 
 		</li>
 	</div>
