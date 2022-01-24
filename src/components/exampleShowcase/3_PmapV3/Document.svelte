@@ -15,5 +15,5 @@
     const startingId = fullCardLayout[1].apexCardId    
     console.log('startingId',startingId)
 </script>
-<Header cardId={startingId}/>
+<!-- <Header cardId={startingId}/> -->
 <Card cardId={startingId} />

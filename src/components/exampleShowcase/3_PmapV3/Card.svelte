@@ -1,36 +1,35 @@
 <script>
 	import { flip } from 'svelte/animate';
-	export let cardId
-    export let pointerOverCard
+	export let cardId;
+	export let pointerOverCard;
 	import { cardLayout } from './stores/cardLayout';
-	import {drop } from './stores/tools'
-	
+	import { drop } from './stores/tools';
+
 	import Header from './Header.svelte';
-    import Draggable from './Draggable.svelte'
+	import Draggable from './Draggable.svelte';
+	console.log('cardChildId:',cardId)
+	console.log('cardChildren:',$cardLayout[cardId].children)
 </script>
 
 <div>
-    {#each  $cardLayout[cardId].children as childId, cardIndex (childId)}
-	<div animate:flip>
-		<!-- <Header cardId={childId}/> -->
-		<!-- card{childId} -->
-		<ul
-			class:hovering={pointerOverCard === childId}
-			on:dragenter={() => (pointerOverCard = childId)}
-			on:dragleave={() => (pointerOverCard = null)}
-			on:drop={(event) => drop(event, childId)}
-			ondragover="return false"
-			class="bg-blue-200"
-		>
-		<Header cardId={childId}/>
-
-			<Draggable cardId = {childId}  
-            cardIndex={cardIndex} />
-
-		</ul>
-	</div>
-{/each}
-
+	{#each $cardLayout[cardId].children as childId, cardIndex (childId)}
+		<div animate:flip>
+			<!-- <Header cardId={childId}/> -->
+			<!-- card{childId} -->
+			<ul
+				class:hovering={pointerOverCard === childId}
+				on:dragenter={() => (pointerOverCard = childId)}
+				on:dragleave={() => (pointerOverCard = null)}
+				on:drop={(event) => drop(event, childId)}
+				ondragover="return false"
+				class="bg-blue-200"
+			>
+				<Header cardId={childId} />
+				FROM CARD.js:{childId}
+				<Draggable cardId={childId} {cardIndex} />
+			</ul>
+		</div>
+	{/each}
 
 	<style>
 		.item {

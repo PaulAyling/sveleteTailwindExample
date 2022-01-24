@@ -12,8 +12,7 @@
 		<li
 			draggable={true}
 			on:dragstart={(event) => dragStart(event, cardId, cardIndex)}>
-        {childId} down and dirty
-		<!-- BELOW IS WAHT CRASHES MY APP to crash with : Maximum call stack size exceeded -->
+        {childId} FROM DRAGGABLE.JS
 		<Card cardId={childId}/> 
 		</li>
 	</div>
