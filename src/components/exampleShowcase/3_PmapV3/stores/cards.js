@@ -83,7 +83,7 @@ const importedCards = {
 		}
 	},
 	5: {
-		componentId: 4,
+		componentId: 5,
 		url: 'https://www.trekbikes.com/us/en_US/',
 		allTags: ['mountainbike', 'manufacturer'],
 		usersVersion: {
@@ -99,7 +99,7 @@ const importedCards = {
 		}
 	},
 	6: {
-		componentId: 4,
+		componentId: 6,
 		url: 'https://www.trekbikes.com/us/en_US/',
 		allTags: ['mountainbike', 'manufacturer'],
 		usersVersion: {

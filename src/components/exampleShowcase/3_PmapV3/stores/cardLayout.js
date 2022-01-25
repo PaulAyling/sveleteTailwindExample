@@ -74,7 +74,22 @@ const getUsersDocViewId = ()=>{
 //CREATE STORE FOR USERS VIEW
 const layoutOnly = fullCardLayout[getUsersDocViewId()].layout
 export const pointerOverCard = writable(null)
-export const cardLayout = writable(layoutOnly)
+
+
+const data = {
+    1:{'id':1,'children':[2,3]},
+    2:{'id':2,'children':[]},
+    3:{'id':3,'children':[4]},
+    4:{'id':4,'children':[5,6]},
+    5:{'id':5,'children':[]},
+    6:{'id':6,'children':[7,8]},
+    7:{'id':7,'children':[]},
+    8:{'id':8,'children':[9]},
+    9:{'id':9,'children':[]},
+    }
+
+
+export const cardLayout = writable(data)
 
 
 

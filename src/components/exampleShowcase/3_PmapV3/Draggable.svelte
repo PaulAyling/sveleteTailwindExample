@@ -7,13 +7,24 @@
 	import Card from './Card.svelte' 
 	import {flip} from 'svelte/animate';
 </script>
+
+<!-- {#if $cardLayout[cardId].children.length === 0}
+	<div class="item">
+		<li
+			draggable={true}
+			on:dragstart={(event) => dragStart(event, cardId, cardIndex)}>
+		{cardId}
+		</li>
+	</div>
+{/if} -->
+
 {#each $cardLayout[cardId].children as childId, childIndex (childId)}
 	<div class="item" animate:flip>
 		<li
 			draggable={true}
 			on:dragstart={(event) => dragStart(event, cardId, cardIndex)}>
-        <!-- {childId} FROM DRAGGABLE.JS -->
 		<Card cardId={childId}/> 
+		{childId}
 		</li>
 	</div>
 {/each}
