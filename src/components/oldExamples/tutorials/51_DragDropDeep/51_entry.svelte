@@ -19,30 +19,6 @@ ver 51
 <!-- //style below -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 	h1 {
 		text-transform: uppercase;

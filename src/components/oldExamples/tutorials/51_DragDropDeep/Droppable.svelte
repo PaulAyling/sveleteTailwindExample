@@ -11,9 +11,9 @@
 {#each loopingArr as childId, childIndex (childId)}
 	<div class="item" animate:flip>
 		<li
-			draggable={true}
-			on:dragstart={(event) => dragStart(event, parentId, childIndex)}>
-        {childId}
+		draggable={true}
+		on:dragstart={(event) => dragStart(event, parentId, childIndex)}>
+		{childId}
 		<Draggable
 		parentId={childId}
 		bind:pointerOverCard={pointerOverCard}
@@ -22,39 +22,9 @@
 		</li>
 	</div>
 {/each}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 	.item {
 		display: inline; /* required for flip to work */
-
 	}
 	li {
 		background-color: lightcoral;
@@ -63,7 +33,9 @@
 		display: inline-block;
 		margin-right: 10px;
         border-radius: 3px;
-		
+		margin:2px;
+		min-height: 80px; /* needed when empty */
+		min-width: 40px;
 	}
 	li:hover {
 		background: orange;

@@ -11,13 +11,14 @@
 {#each loopingArr as childId, childIndex (childId)}
 	<div animate:flip>
 		<b>{childId}</b>
+		
 		<ul
-			class:hovering={pointerOverCard === childId}
-			on:dragenter={() => (pointerOverCard = childId)}
-			on:dragleave={() => (pointerOverCard = null)}
-			on:drop={(event) => drop(event, childId)}
-			ondragover="return false"
-			class="bg-blue-200"
+		class:hovering={pointerOverCard === childId}
+		on:dragenter={() => (pointerOverCard = childId)}
+		on:dragleave={() => (pointerOverCard = null)}
+		on:drop={(event) => drop(event, childId)}
+		ondragover="return false"
+		class="bg-blue-200"
 		>
 			<Droppable 
                 parentId={childId} 
@@ -25,24 +26,6 @@
 		</ul>
 	</div>
 {/each}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
 	.hovering {
