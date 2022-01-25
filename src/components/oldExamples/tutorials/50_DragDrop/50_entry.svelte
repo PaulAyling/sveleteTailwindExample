@@ -9,13 +9,39 @@
 </script>
 
 <Draggable
-	cardId={startingId}
+	parentId={startingId}
 	bind:pointerOverCard={$pointerOverCard}
 	bind:cardLayout={$cardLayout}
 />
 
 <button class="delete" on:click={() => remove(3, 0)}> Delete </button>
 <button class="add" on:click={() => add(2, 9)}> Add </button>
+<!-- //style below -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
 	h1 {

@@ -1,23 +1,47 @@
 <script>
-	export let cardId
-	export let cardIndex
-// 	export let arr
+	export let parentId
+	export let pointerOverCard
 	import {dragStart} from './utilities.js'
 	import {cardLayout} from './store.js'
 	import {flip} from 'svelte/animate';
-	$: loopingArr = $cardLayout[cardId].children
+	$: loopingArr = $cardLayout[parentId].children
 </script>
+
 {#each loopingArr as childId, childIndex (childId)}
 	<div class="item" animate:flip>
 		<li
 			draggable={true}
-			on:dragstart={(event) => dragStart(event, cardId, childIndex)}>
-            <!-- <slot item={item}/> -->
-<!-- 		CONTENT HERE				 -->
+			on:dragstart={(event) => dragStart(event, parentId, childIndex)}>
         {childId}
 		</li>
 	</div>
 {/each}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
