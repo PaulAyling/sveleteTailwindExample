@@ -4,13 +4,12 @@
 	export let cardLayout;
 	import { drop } from './utilities.js';
 	import { flip } from 'svelte/animate';
-	import Draggable from './Draggable.svelte';
+	import Draggable from './Draggable_arc.svelte'
 	$: loopingArr = cardLayout[parentId].children;
 </script>
 
 {#each loopingArr as childId, childIndex (childId)}
 	<div animate:flip>
-		
 		<ul
 		class:hovering={pointerOverCard === childId}
 		on:dragenter={() => (pointerOverCard = childId)}
@@ -20,9 +19,9 @@
 		class="bg-blue-200"
 		>
 		<b>{childId}</b>
-			<Draggable 
-                parentId={childId} 
-                bind:pointerOverCard={pointerOverCard} />
+		<Draggable 
+		parentId={childId} 
+		bind:pointerOverCard={pointerOverCard} />
 		</ul>
 	</div>
 {/each}

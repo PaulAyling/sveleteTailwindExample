@@ -1,5 +1,5 @@
 <script>
-	import Draggable from './Draggable.svelte';
+	import Droppable from './Droppable.svelte';
 	import { cardLayout, pointerOverCard } from './store.js';
 	import { add, remove } from './utilities.js';
 	// cardLayout.subscribe((value) => {
@@ -8,7 +8,7 @@
 	const startingId = 0;
 </script>
 ver 51
-<Draggable
+<Droppable
 	parentId={startingId}
 	bind:pointerOverCard={$pointerOverCard}
 	bind:cardLayout={$cardLayout}

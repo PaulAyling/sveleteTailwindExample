@@ -2,7 +2,7 @@
 	export let parentId;
 	export let pointerOverCard;
 	export let cardLayout;
-	import { drop } from './utilities.js';
+	import { drop } from '../utilities';
 	import { flip } from 'svelte/animate';
 	import Draggable from './Draggable.svelte';
 	$: loopingArr = cardLayout[parentId].children;

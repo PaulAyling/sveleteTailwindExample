@@ -4,7 +4,7 @@
 	import {dragStart} from './utilities.js'
 	import {cardLayout} from './store.js'
 	import {flip} from 'svelte/animate';
-	import Draggable from './Droppable.svelte'
+	import Draggable from './Droppable_arc.svelte'
 	$: loopingArr = $cardLayout[parentId].children
 </script>
 
@@ -14,10 +14,10 @@
 		draggable={true}
 		on:dragstart={(event) => dragStart(event, parentId, childIndex)}>
 		{childId}
-		<!-- <Draggable
+		<Draggable
 		parentId={childId}
 		bind:pointerOverCard={pointerOverCard}
-		bind:cardLayout={$cardLayout}/> -->
+		bind:cardLayout={$cardLayout}/>
 	
 		</li>
 	</div>
