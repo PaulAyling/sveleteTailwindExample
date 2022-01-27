@@ -20,7 +20,7 @@
 		class:hovering={$pointerOverCard === parentId}
 		on:dragenter={() => ($pointerOverCard = parentId)}
 		on:dragleave={() => ($pointerOverCard = parentId)}
-		on:drop={(event) => drop(event, parentId,textIx )}
+		on:drop={(event) => drop(event, parentId, )}
 		ondragover="return false"
 	>
 		<!-- Children of card -->

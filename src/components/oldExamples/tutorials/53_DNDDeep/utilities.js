@@ -29,7 +29,7 @@ export const remove = (cardId,childIx) =>{
 	}
 	
 export const drop =(event, newParentId ,newIx) =>{
-		console.log('textIx',textIx)
+		console.log('newIx',newIx)
 		//  newParentId  	= ID    of parent of array that the card is dragged to  
 		//newIx 			= Index of the new location
 		//0.1 Load in data
