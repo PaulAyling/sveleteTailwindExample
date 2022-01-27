@@ -6,32 +6,42 @@
     const flipDurationMs = 200;
     function handleDndConsiderColumns(e) {
         columnItems = e.detail.items;
+        console.log('columnItems',columnItems)
     }
     function handleDndFinalizeColumns(e) {
         columnItems = e.detail.items;
+        console.log('columnItems',columnItems)
     }
     function handleDndConsiderCards(cid, e) {
         const colIdx = columnItems.findIndex(c => c.id === cid);
         columnItems[colIdx].items = e.detail.items;
         columnItems = [...columnItems];
+        console.log('columnItems',columnItems)
     }
     function handleDndFinalizeCards(cid, e) {
         const colIdx = columnItems.findIndex(c => c.id === cid);
         columnItems[colIdx].items = e.detail.items;
         columnItems = [...columnItems];
+        console.log('columnItems',columnItems)
     }
     function handleClick(e) {
         alert('dragabble elements are still clickable :)');
     }
 </script>
-<section class="board" use:dndzone={{items:columnItems, flipDurationMs, type:'columns'}} on:consider={handleDndConsiderColumns} on:finalize={handleDndFinalizeColumns}>
+<section 
+    class="board" 
+    use:dndzone={{items:columnItems, flipDurationMs, type:'columns'}} 
+    on:consider={handleDndConsiderColumns} 
+    on:finalize={handleDndFinalizeColumns}>
+    
     {#each columnItems as column (column.id)}
-        <div class="column"
+        <div class="column bg-red-200"
              animate:flip="{{duration: flipDurationMs}}">
             <div class="column-title">{column.name}</div>
             <div class="column-content" use:dndzone={{items:column.items, flipDurationMs}}
                  on:consider={(e) => handleDndConsiderCards(column.id, e)} on:finalize={(e) => handleDndFinalizeCards(column.id, e)}>
-                {#each column.items as item (item.id)}
+                
+                 {#each column.items as item (item.id)}
                     <div class="card" animate:flip="{{duration: flipDurationMs}}" on:click={handleClick}>
                         {item.name}
                     </div>
