@@ -6,8 +6,10 @@
 	const cardName = 'Card ID: ' + parentId;
 </script>
 
-<article title={cardName} class="flex-col rounded-4 bg-red-500">
-	<Droppable {parentId} bind:pointerOverCard={$pointerOverCard} bind:cardLayout={$cardLayout}>
-
-	</Droppable>
+<article title={cardName} class="text-black p-2">
+	<Droppable parentId={parentId} bind:pointerOverCard={$pointerOverCard} bind:cardLayout={$cardLayout} />
 </article>
+
+
+
+

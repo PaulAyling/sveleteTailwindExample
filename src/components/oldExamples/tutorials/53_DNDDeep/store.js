@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store'
 export const cardLayout = writable({
-    0:{'id':0,'children':[1]},
+    0:{'id':0,'children':[1,2,3]},
     1:{'id':1,'children':[]},
-    // 2:{'id':2,'children':[]},
-    // 3:{'id':3,'children':[]},
+    2:{'id':2,'children':[]},
+    3:{'id':3,'children':[]},
     // 4:{'id':4,'children':[6]},
     // 5:{'id':5,'children':[7]},
     // 6:{'id':6,'children':[]},
@@ -16,4 +16,8 @@ export const cardLayout = writable({
     })
 
 export const pointerOverCard = writable(null)
+export const pointerOverPosition = {
+    'cardId':null,
+    'index':null
+}
 

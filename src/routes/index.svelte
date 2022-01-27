@@ -1,6 +1,6 @@
 <script>
     // import DndDeep from '../components/oldExamples/tutorials/51_DragDropDeep/51_entry.svelte'
-    import DndDeep from '../components/oldExamples/tutorials/52_DragDropDeep/52_entry.svelte'
+    import DndDeep from '../components/oldExamples/tutorials/53_DNDDeep/53_entry.svelte'
     // import Pmap3 from '../components/exampleShowcase/3_PmapV3/Document.svelte'
 </script>
 
