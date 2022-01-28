@@ -33,6 +33,7 @@
     use:dndzone={{items:columnItems, flipDurationMs, type:'columns'}} 
     on:consider={handleDndConsiderColumns} 
     on:finalize={handleDndFinalizeColumns}>
+    Document
     
     {#each columnItems as column (column.id)}
         <div class="column bg-red-200"
