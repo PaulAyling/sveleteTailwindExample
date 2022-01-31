@@ -22,7 +22,7 @@
 
 <!-- <article style="color:{node.color}"> -->
 <article class="">
-    <b >CARD: {node.name}</b> 
+    <b >CARD: {node.id}</b> 
 {#if node.hasOwnProperty("items")}
 
 	<section use:dndzone={{items:node.items, flipDurationMs, centreDraggedOnCursor: true}}
