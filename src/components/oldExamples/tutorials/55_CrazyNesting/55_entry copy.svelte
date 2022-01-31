@@ -17,13 +17,19 @@
 					},
 		node3:{name:'node 3',
 					 items:[
-
+						 {id: 'node9'},
+						 {id: 'node10'},
+						 {id: 'node11'},
+						 {id: 'node12'}
 					 ],
 					 id:'node3'
 					},
 		node4:{name:'node 4',
 					 items:[
-						 {id: 'node5'},
+						 {id: 'node13'},
+						 {id: 'node14'},
+						 {id: 'node15'},
+						 {id: 'node16'}
 					 ],
 					 id:'node4',
 					 color: 'salmon'

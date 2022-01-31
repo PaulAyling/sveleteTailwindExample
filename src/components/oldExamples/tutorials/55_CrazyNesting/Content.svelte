@@ -13,23 +13,24 @@
 	function handleDndFinalize(e) {
 		node.items = e.detail.items;
 		console.log(e)
-        console.log('nodes:', nodes)
+        console.log('REAL THING:',JSON.stringify(nodes));
 		nodes = {...nodes};
 	}
 </script>
 
 
 
-<article style="color:{node.color}">
+<!-- <article style="color:{node.color}"> -->
+<article class="">
     <b >CARD: {node.name}</b> 
 {#if node.hasOwnProperty("items")}
 
-	<section  use:dndzone={{items:node.items, flipDurationMs, centreDraggedOnCursor: true}}
+	<section use:dndzone={{items:node.items, flipDurationMs, centreDraggedOnCursor: true}}
 					 on:consider={handleDndConsider} 
 					 on:finalize={handleDndFinalize}>		
        <!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter(item => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item(item.id)}
-				<div animate:flip="{{duration: flipDurationMs}}" class="item ">
+				<div animate:flip="{{duration: flipDurationMs}}" class="item min-h-12 ">
 					<svelte:self bind:nodes={nodes} node={nodes[item.id]} />
 				</div>
 			{/each}
@@ -40,10 +41,10 @@
 
 
 
-
 <style>
 	section {
 		width: auto;
+		min-height:40px;
 		border: 0px solid black;
 		padding: 0.4em;
         /* this will allow the dragged element to scroll the list */
@@ -61,6 +62,8 @@
 	.item{
 		background-color: rgba(00, 100, 100, 0.1);
         border-radius:8px;
+		
+	
 	}
     article{
         width: auto;
@@ -69,4 +72,5 @@
         border-radius: 5px;
    
         }
+
 </style>
