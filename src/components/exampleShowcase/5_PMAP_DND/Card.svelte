@@ -1,6 +1,9 @@
 <script>
 	import { flip } from 'svelte/animate';
 	import { dndzone, SHADOW_PLACEHOLDER_ITEM_ID } from 'svelte-dnd-action';
+	import {cardLayout} from './stores/cardLayout'
+	import Header from './Header.svelte'
+
 
 	export let nodes;
 	export let node;
@@ -18,14 +21,10 @@
 	if(node.id ==2) {
 		layout = "flex flex-row"
 	}
-	console.log(layout)
-
 </script>
-
-<!-- <article style="color:{node.color}"> -->
 <article >
-
 	<b>CARD: {node.id}</b>
+	<Header cardId={node.id}/>
 	{#if node.hasOwnProperty('items')}
 		<section
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}

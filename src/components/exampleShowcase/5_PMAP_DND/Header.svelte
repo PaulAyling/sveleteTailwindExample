@@ -1,0 +1,11 @@
+<script>
+    export let cardId
+    import {cards} from './stores/cards'
+    cards.subscribe(value => {
+		console.log('STORE:CARDS:',value)
+	})
+</script>
+<div class="bg-red-400 p-1 rounded-md flex-row">
+    <div>{cardId}</div>
+    <div><input class="text-black p-1 bg-gray-200 w-full rounded-md" bind:value={$cards[cardId].title   } placeholder="enter your name"></div>
+ </div>
