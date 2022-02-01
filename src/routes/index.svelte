@@ -11,4 +11,7 @@
 <!-- <Pmap3/> -->
 <!-- <PMDND/> -->
 <!-- <DndDeep/> -->
-<PMP/>
+<div class="w-full">
+
+    <PMP/>
+</div>

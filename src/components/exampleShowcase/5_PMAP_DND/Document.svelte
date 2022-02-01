@@ -1,6 +1,5 @@
 <script>
 	import Card from './Card.svelte';
-	// import {cardLayout} from './stores/cardLayout'
 
 	let nodes = {
 		1: { id: 1, items: [{ id: 2 }] },
