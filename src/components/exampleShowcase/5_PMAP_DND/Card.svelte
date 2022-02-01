@@ -2,6 +2,8 @@
 	import { flip } from 'svelte/animate';
 	import { dndzone, SHADOW_PLACEHOLDER_ITEM_ID } from 'svelte-dnd-action';
 	import Header from './Header.svelte';
+	import Info from './Info.svelte'
+
 	export let nodes;
 	export let node;
 
@@ -18,8 +20,10 @@
 	if (node.id == 2) {
 		layout = 'flex flex-col';
 	}
+	// console.log('event', e)
 </script>
 <article class="p-2 rounded-md  bg-blue-400">
+
 	<Header cardId={node.id} />
 	<!-- DROPZONE -->
 	{#if node.hasOwnProperty('items')}
@@ -35,10 +39,12 @@
 					<svelte:self bind:nodes node={nodes[item.id]} />
 				</div>
 			{/each}
+			<Info />
 			<div class="p-1">+</div>
 		</section>
 	{/if}
 </article>
+
 <style>
 	section {
 		width: auto;

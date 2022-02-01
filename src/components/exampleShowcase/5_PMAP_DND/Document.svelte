@@ -13,4 +13,7 @@
 
 </script>
 
-<Card node={nodes[1]} bind:nodes />
+
+	<Card node={nodes[1]} bind:nodes />
+
+
