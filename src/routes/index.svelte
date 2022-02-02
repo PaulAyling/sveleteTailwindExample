@@ -6,12 +6,12 @@
     // import PMDND from '../components/oldExamples/tutorials/56_PmapDND/56_entry.svelte'
     // import PMPND from '../components/exampleShowcase/2_pmapNewDesign/2_entry.svelte'
     import PMP from '../components/exampleShowcase/5_PMAP_DND/Document.svelte'
+    // import Width from '../components/oldExamples/tutorials/57_widthCheck/57_Entry.svelte'
 </script>
 
 <!-- <Pmap3/> -->
 <!-- <PMDND/> -->
 <!-- <DndDeep/> -->
-<div class="w-full">
 
     <PMP/>
-</div>
+<!-- <Width/> -->

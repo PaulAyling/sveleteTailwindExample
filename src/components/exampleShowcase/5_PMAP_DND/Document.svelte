@@ -12,8 +12,8 @@
 	};
 
 </script>
-
-
+<main id="pauls" label="myMain" class=" p-3">
 	<Card node={nodes[1]} bind:nodes />
+</main>
 
 

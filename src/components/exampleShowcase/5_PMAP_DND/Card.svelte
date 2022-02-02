@@ -6,6 +6,10 @@
 
 	export let nodes;
 	export let node;
+	export let level;
+
+
+	let bodyVisible = false
 
 	const flipDurationMs = 300;
 	function handleDndConsider(e) {
@@ -17,29 +21,30 @@
 		nodes = { ...nodes };
 	}
 	var layout = '';
-	if (node.id == 2) {
-		layout = 'flex flex-col';
+	if (node.id == 1) {
+		layout = 'flex flex-col flex-wrap';
 	}
-	// console.log('event', e)
 </script>
-<article class="p-2 rounded-md  bg-blue-400">
-	<Header cardId={node.id} />
+<article class=" p-2 rounded-md  bg-blue-400">
+	<Header cardId={node.id} bind:bodyVisible={bodyVisible}/>
+	{#if bodyVisible}
 	<Body cardId = {node.id}/>
+	{/if}
 	<!-- DROPZONE -->
 	{#if node.hasOwnProperty('items')}
 		<section
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
 			on:consider={handleDndConsider}
 			on:finalize={handleDndFinalize}
-			class={layout +" rounded-md  bg-green-400"}
+			class={layout + " rounded-md  bg-green-400"}
 		>
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}
-				<div animate:flip={{ duration: flipDurationMs }} class="item rounded-md p-2 ">
+				<div animate:flip={{ duration: flipDurationMs }} class="item rounded-md p-1 ">
 					<svelte:self bind:nodes node={nodes[item.id]} />
 				</div>
 			{/each}
-			<div class="p-1">+</div>
+			<div class="pl-1">+</div>
 		</section>
 	{/if}
 </article>
