@@ -16,7 +16,7 @@ const importedCards = {
 		versions: {
 			1: {
 				title: 'Which Bicycle Should I Buy',
-				imageUrl: 'https://bikexchange.com/wp-content/uploads/2020/12/bikes1212-e1630349513789.png',
+				imageUrl: 'https://cdn.mos.cms.futurecdn.net/dpA5bpmPcBM6rPszKB9SpH-1200-80.jpg',
 				notes: 'tbc'
 			},
 			2: {
@@ -38,7 +38,7 @@ const importedCards = {
 			1: {
 				title: 'Road Bikes',
 				imageUrl:
-					'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg/300px-Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg',
+					'https://cdn.mos.cms.futurecdn.net/dpA5bpmPcBM6rPszKB9SpH-1200-80.jpg',
 				notes: 'Road racing can be fun...'
 			}
 		}
