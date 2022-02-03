@@ -14,12 +14,13 @@
 
 <div class="flex flex-row flex-start p-2 items-center">
 	<Fa class="mr-2 align-bottom" icon={faGripVertical} />
-	<input
+	<!-- <input
 		class="text-zinc-100 flex-grow  bg-blue-400 align-top"
 		bind:value={$cards[cardId].title}
 		placeholder="enter your name"
 		maxlength=20
-	/>
+	/> -->
+	<Input bind:title={$cards[cardId].title} bind:url={$cards[cardId].url}/>
 	<Toolbar bind:bodyVisible={bodyVisible}/>
 </div>
 <style>

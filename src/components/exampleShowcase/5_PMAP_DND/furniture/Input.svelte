@@ -4,17 +4,12 @@
 </script>
 
 <input
-	class="bg-red-500 text-blue-100 rounded p-1 w-full"
+	class="text-blue-100 rounded p-1 w-full text-zinc-100 flex-grow  bg-blue-400 "
 	type="text"
 	id="fname"
 	name="firstname"
+    bind:value={title}
 	placeholder="Url Description"
 />
 
-<style>
-	input[type='text'],
-	select,
-	textarea {
-		resize: vertical;
-	}
-</style>
+
