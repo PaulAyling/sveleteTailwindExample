@@ -1,10 +1,36 @@
 <script>
     export let notes
 </script>
-<div>
-    <textarea  class="rounded-md width-full p-2" id="w3review" name="w3review" rows="4" cols="20">
-        {notes}
-        </textarea>
-        
 
-</div>
+<span class="textarea" role="textbox" contenteditable></span>
+
+<style>
+
+/* let righ expansion */
+
+
+    /* Vertical expansion */
+.textarea:hover{
+    background:white;
+}
+.textarea {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+}
+.textarea {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Placeholder still possible";
+  color: gray;
+}
+
+</style>
