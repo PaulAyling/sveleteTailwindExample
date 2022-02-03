@@ -2,7 +2,7 @@
     export let imageUrl
     export let title
 </script>
-    <div class="rounded-md width-full p-2">
+    <div class="rounded-md max-w-6xl p-2">
         <img class="bg-cover  rounded-md" 
         src="{imageUrl}" 
         alt="{title}">

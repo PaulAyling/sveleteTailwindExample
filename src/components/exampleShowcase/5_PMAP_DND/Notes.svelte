@@ -2,7 +2,7 @@
     export let notes
 </script>
 
-<span class="textarea" role="textbox" contenteditable></span>
+<span class="textarea max-w-6xl" role="textbox" contenteditable></span>
 
 <style>
 
@@ -29,7 +29,7 @@
 }
 
 .textarea[contenteditable]:empty::before {
-  content: "Placeholder still possible";
+  content: "Commnents";
   color: gray;
 }
 
