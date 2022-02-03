@@ -6,7 +6,7 @@ import { get } from 'svelte/store';
 const importedCards = {
 	1: {
 		componentId: 1,
-		url: 'tbc',
+		url: 'https://en.wikipedia.org/wiki/Bicycle',
 		allTags: ['lesiure', 'sport', 'machines'],
 		usersVersion: {
 			// userId:{ userId :1, versionId :1}

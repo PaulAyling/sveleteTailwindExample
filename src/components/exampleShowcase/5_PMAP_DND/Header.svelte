@@ -11,7 +11,6 @@
 	cards.subscribe((value) => {
 		console.log('STORE:CARDS:', value);
 	});
-	console.log('jjjj', editUrl);
 </script>
 
 <div class="flex flex-row flex-start p-2 items-center">
@@ -21,7 +20,7 @@
 	{:else}
 		<Input bind:inputText={$cards[cardId].url} inputPlaceholder="mysite.com/blog" />
 	{/if}
-	<Toolbar bind:bodyVisible bind:editUrl />
+	<Toolbar bind:bodyVisible bind:editUrl cardId={cardId} />
 </div>
 
 <style>
