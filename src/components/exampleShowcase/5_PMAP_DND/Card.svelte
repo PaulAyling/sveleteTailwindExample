@@ -6,10 +6,10 @@
 
 	export let nodes;
 	export let node;
-	export let level;
 
 
 	let bodyVisible = false
+	let editUrl = false
 
 	const flipDurationMs = 300;
 	function handleDndConsider(e) {
@@ -26,7 +26,7 @@
 	}
 </script>
 <article class=" p-2 rounded-md  bg-blue-400">
-	<Header cardId={node.id} bind:bodyVisible={bodyVisible}/>
+	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl}/>
 	{#if bodyVisible}
 	<Body cardId = {node.id}/>
 	{/if}

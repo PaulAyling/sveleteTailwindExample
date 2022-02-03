@@ -1,6 +1,7 @@
 <script>
-	export let title;
-	export let url;
+	export let inputText;
+	export let inputPlaceholder
+
 </script>
 
 <input
@@ -8,8 +9,8 @@
 	type="text"
 	id="fname"
 	name="firstname"
-    bind:value={title}
-	placeholder="Url Description"
+    bind:value={inputText}
+	placeholder={inputPlaceholder}
 />
 
 
