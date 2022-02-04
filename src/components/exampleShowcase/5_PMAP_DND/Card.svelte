@@ -6,6 +6,7 @@
 
 	export let nodes;
 	export let node;
+	export let colorShade;
 
 
 	let bodyVisible = false
@@ -22,11 +23,13 @@
 	}
 	var layout = '';
 	if (node.id == 1) {
-		layout = 'flex flex-col flex-wrap';
+		layout = 'flex flex-row flex-wrap';
 	}
+	const dragzoneStyle  =  "p-2 rounded-md  bg-blue-" + colorShade 
+	console.log(dragzoneStyle)
 </script>
-<article class=" p-2 rounded-md  bg-blue-400">
-	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl}/>
+<article class={dragzoneStyle}>
+	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl} colorShade={colorShade}/>
 	{#if bodyVisible}
 	<Body cardId = {node.id}/>
 	{/if}
@@ -41,7 +44,7 @@
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}
 				<div animate:flip={{ duration: flipDurationMs }} class="item rounded-md p-1 ">
-					<svelte:self bind:nodes node={nodes[item.id]} />
+					<svelte:self bind:nodes node={nodes[item.id]} colorShade={colorShade-100} />
 				</div>
 			{/each}
 			<div class="pl-1">+</div>

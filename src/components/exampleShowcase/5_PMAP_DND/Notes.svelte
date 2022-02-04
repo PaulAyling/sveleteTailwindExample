@@ -1,9 +1,9 @@
 <script>
     export let notes
 </script>
-<div class="px-2 pb-1">
+<div class="px-2 pb-1 rounded-md">
 
-  <span class="textarea max-w-6xl rounded p-10" role="textbox" contenteditable></span>
+  <span class="textarea max-w-6xl rounded-md p-10 text-blue-100" role="textbox" contenteditable></span>
 </div>
 
 <style>
@@ -14,9 +14,10 @@
     /* Vertical expansion */
 .textarea:hover{
     background:white;
+    color:#DBEAFE;
 }
 .textarea {
-  border: 1px solid green;
+  border: 1px solid #22c55e;
   font-family: inherit;
   font-size: inherit;
   padding: 1px 6px;
@@ -31,8 +32,8 @@
 }
 
 .textarea[contenteditable]:empty::before {
-  content: "Commnents";
-  color: gray;
+  content: "Comments";
+
 }
 
 </style>

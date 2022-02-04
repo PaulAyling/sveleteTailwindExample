@@ -10,10 +10,11 @@
 		6: { id: 6, items: [] },
 
 	};
+	let colorShade = 700
 
 </script>
 <main id="pauls" label="myMain" class=" p-3">
-	<Card node={nodes[1]} bind:nodes />
+	<Card node={nodes[1]} bind:nodes  colorShade={colorShade}/>
 </main>
 
 
