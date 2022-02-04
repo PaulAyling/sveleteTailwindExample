@@ -9,9 +9,10 @@
 
 	import Input from './furniture/Input.svelte';
 	import Toolbar from './furniture/buttons/Toolbar.svelte';
-	cards.subscribe((value) => {
-		console.log('STORE:CARDS:', value);
-	});
+	// cards.subscribe((value) => {
+	// 	console.log('STORE:CARDS:', value);
+	// });
+
 </script>
 
 <div class="flex flex-row flex-start p-2 items-center">

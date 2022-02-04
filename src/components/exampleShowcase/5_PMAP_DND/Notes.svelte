@@ -1,9 +1,17 @@
 <script>
     export let notes
+    export let colorShade
+
+    var textCol
+	colorShade < 500 ? textCol = "text-blue-800" : textCol = "text-blue-100"	
+	let style 
+	style = textCol+" hover:bg-green-400 hover:text-white rounded p-1 w-full flex-grow  bg-blue-"+colorShade
+
+
 </script>
 <div class="px-2 pb-1 rounded-md">
 
-  <span class="textarea max-w-6xl rounded-md p-10 text-blue-100" role="textbox" contenteditable></span>
+  <span class={style} role="textbox" contenteditable>{notes}</span>
 </div>
 
 <style>

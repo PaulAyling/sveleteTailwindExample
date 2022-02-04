@@ -1,5 +1,6 @@
 <script>
 	import Card from './Card.svelte';
+	import {cardLayout} from './stores/cardLayout'
 
 	let nodes = {
 		1: { id: 1, items: [{ id: 2 }] },
@@ -10,11 +11,11 @@
 		6: { id: 6, items: [] },
 
 	};
-	let colorShade = 700
+	let colorShade = 900
 
 </script>
 <main id="pauls" label="myMain" class=" p-3">
-	<Card node={nodes[1]} bind:nodes  colorShade={colorShade}/>
+	<Card node={$cardLayout[1]} bind:nodes  colorShade={colorShade}/>
 </main>
 
 

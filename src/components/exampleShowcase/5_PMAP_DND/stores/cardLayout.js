@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store'
-//Data  //This will be multiluseer in time
 let nodes = {
     1: { id: 1, items: [{ id: 2 }] },
     2: { id: 2, items: [{ id: 3 },{ id: 4 },{id: 5}] },

@@ -1,12 +1,12 @@
 <script>
     export let cardId
+    import { remove } from '../../stores/tools'
     import Fa from 'svelte-fa';
 	import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-    const remove=() =>{
-	console.log('remove  running....' ,cardId)
-}
+
+
 </script>
-<button  on:click={remove} class="p-2">
+<button  on:click={() => remove(cardId)} class="p-2">
     <Fa icon={faTrash} />
 </button>   

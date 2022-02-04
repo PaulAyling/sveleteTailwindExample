@@ -1,13 +1,53 @@
-import {cardLayout, pointerOverCard} from './cardLayout'	
+import {cardLayout} from './cardLayout'	
 import { get } from 'svelte/store';
 
-//UTILITIES
-export const remove = (cardId,childIx) =>{
+// UTILS
+const getParentId = (childId) =>{
+	const findId = (id,myarr)=>{
+	let res
+	for (let i = 0; i < myarr.length; i++) {
+		if(myarr[i].id == id ) return true
+		}
+	return false
+	}
+	const snapshot=get(cardLayout)
+	for (const key in snapshot) {
+  	let nodeArr = snapshot[key].items
+		if(findId(childId,nodeArr) == true) {
+			return key
+		}
+	}
+}
+
+
+
+console.log('getParentId',getParentId(6))
+
+
+
+
+
+
+//UPDATES
+export const remove = (cardId) =>{
+	// 1. Remove child from items
+		// Get parentId
+		// Remove item from child
+
+	// 2. Remove child from cardLayout
+
+	// Remove from Hierachy
+	const parentId = getParentId(cardId,$cardLayout)
+	console.log('parentId',parentId)
+
+		console.log('remove running.......',cardId)
 		cardLayout.update(val=> 
-		{	val[cardId].children.splice(childIx,1) 
-			return val
+		{	delete val[cardId];
+			console.log(val)
 		})
 	}
+
+
 	export const add = (cardIx,newChildCard) => { 
     cardLayout.update(val => {        
         const newChildren= [...val[cardIx].children, newChildCard]

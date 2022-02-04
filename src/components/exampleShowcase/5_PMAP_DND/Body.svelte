@@ -1,5 +1,6 @@
 <script>
     export let cardId
+    export let colorShade
     import {cards} from './stores/cards'
     import Tags from './Tags.svelte'
     import Notes from './Notes.svelte'
@@ -11,5 +12,5 @@
     $:notes = $cards[cardId].notes
 </script>
     <Tags cardId={cardId}/>
-    <ImageCard imageUrl = {imageUrl} title = {title}/>
-    <Notes bind:notes={notes} />
+    <ImageCard bind:imageUrl={imageUrl} title = {title} colorShade={colorShade}/>
+    <Notes bind:notes={notes} colorShade={colorShade} />
