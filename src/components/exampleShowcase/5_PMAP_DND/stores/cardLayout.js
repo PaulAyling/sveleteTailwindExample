@@ -10,10 +10,10 @@ let nodes = {
 
 //Drag n Drop
 
-cardLayout.update((val) => {
-    val.items = e.detail.items;
-    return val;
-});
+// cardLayout.update((val) => {
+//     val.items = e.detail.items;
+//     return val;
+// });
 
 export const cardLayout = writable(nodes)
 
