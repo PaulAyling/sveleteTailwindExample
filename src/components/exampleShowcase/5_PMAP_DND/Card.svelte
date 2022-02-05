@@ -13,17 +13,23 @@
 	let editUrl = false
 
 	const flipDurationMs = 300;
+	
+	//DND FUCTIONS
 	function handleDndConsider(e) {
+		console.log('handleDndConsider: node.items',node.items,'e.detail.items:',e.detail.items)
 		node.items = e.detail.items;
 	}
 	function handleDndFinalize(e) {
 		node.items = e.detail.items;
-		console.log(e);
+		console.log('handleDndFinalize: node.items',node.items,'e.detail.items:',e.detail.items)
 		nodes = { ...nodes };
 	}
+	
+
+
 	var layout = '';
 	if (node.id == 1) {
-		layout = 'flex flex-row flex-wrap';
+		layout = 'flex flex-col flex-wrap';
 	}
 	
 	let dragzoneStyle 
