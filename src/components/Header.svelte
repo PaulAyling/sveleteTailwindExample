@@ -3,6 +3,7 @@
 	export let bodyVisible;
 	export let editUrl;
 	export let colorShade
+	export let removeRecord
 	import { cards } from './stores/cards';
 	import Fa from 'svelte-fa';
 	import { faGripVertical } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +23,7 @@
 	{:else}
 		<Input bind:inputText={$cards[cardId].url} inputPlaceholder="mysite.com/blog" colorShade={colorShade}/>
 	{/if}
-	<Toolbar bind:bodyVisible bind:editUrl cardId={cardId} />
+	<Toolbar bind:bodyVisible bind:editUrl cardId={cardId}  removeRecord={removeRecord} />
 </div>
 
 <style>

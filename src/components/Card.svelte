@@ -3,27 +3,54 @@
 	import { dndzone, SHADOW_PLACEHOLDER_ITEM_ID } from 'svelte-dnd-action';
 	import Header from './Header.svelte';
 	import Body from './Body.svelte'
+	import { getParentId } from './stores/tools';
+	import Add from './furniture/buttons/Add.svelte'
+
 
 	export let nodes;
 	export let node;
 	export let colorShade;
 
+	// let node = $cardLayout[cardId]
 
 	let bodyVisible = false
 	let editUrl = false
 
 	const flipDurationMs = 300;
 	
-	//DND FUCTIONS
+	
 	function handleDndConsider(e) {
-		console.log('handleDndConsider: node.items',node.items,'e.detail.items:',e.detail.items)
 		node.items = e.detail.items;
 	}
 	function handleDndFinalize(e) {
 		node.items = e.detail.items;
-		console.log('handleDndFinalize: node.items',node.items,'e.detail.items:',e.detail.items)
 		nodes = { ...nodes };
 	}
+	const  removeRecord= (cardId) =>{
+		// alert('no more alerts')
+		console.log('remove Record running....')
+		// 1. remove card from items
+		const parentId = getParentId(cardId);
+		const items = nodes[parentId].items;
+		const getIndex = () => {
+			for (let i = 0; i < items.length; i++) {
+				console.log('LOOP:', items[i]);
+				if (items[i].id == cardId) {
+					return i;
+				}
+			}
+			};
+		const cardIndex = getIndex(cardId);
+		nodes[parentId].items.splice(cardIndex, 1);
+		//2. remove card from nodes
+		nodes[cardId].items.splice(cardIndex, 1);
+		nodes = { ...nodes };
+	}
+	const addRecord = (cardId) =>{
+		console.log('add record running.........', cardId)
+	}
+
+
 	//layout template
 	var layout = '';
 	if (node.id == 1) {
@@ -35,7 +62,9 @@
 
 </script>
 <article class={dragzoneStyle}>
-	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl} colorShade={colorShade} />
+	{node.id}
+	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl} colorShade={colorShade} 
+	removeRecord={removeRecord} />
 	{#if bodyVisible}
 	<Body cardId = {node.id} colorShade={colorShade} />
 	{/if}
@@ -53,7 +82,7 @@
 					<svelte:self bind:nodes node={nodes[item.id]} colorShade={colorShade-200} />
 				</div>
 			{/each}
-			<div class="pl-1">+</div>
+			<Add cardId={node.id} addRecord={addRecord}/>
 		</section>
 	{/if}
 </article>

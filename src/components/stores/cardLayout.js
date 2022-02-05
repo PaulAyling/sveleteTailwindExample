@@ -8,6 +8,9 @@ let nodes = {
     6: { id: 6, items: [] },
 };
 
+
+
+
 export const cardLayout = writable(nodes)
 
 
