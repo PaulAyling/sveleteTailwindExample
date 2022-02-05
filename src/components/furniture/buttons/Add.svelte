@@ -6,5 +6,5 @@
 
 
 <button  on:click={() => addRecord(cardId)} class="p-2">
-    + {cardId}
+    +
 </button>

@@ -5,6 +5,8 @@
 	import Body from './Body.svelte'
 	import { getParentId } from './stores/tools';
 	import Add from './furniture/buttons/Add.svelte'
+	import { v4 as uuidv4 } from 'uuid';
+	
 
 
 	export let nodes;
@@ -48,9 +50,29 @@
 	}
 	const addRecord = (cardId) =>{
 		console.log('add record running.........', cardId)
-	}
+		// nodes[cardId].items.
+		const newId = uuidv4()
+		const newItem={'id':newId,'items':[]}
+		const newCard = 	
+		{
+			newId: {
+					componentId: newId,
+					url: 'd',
+					allTags: [],
+					usersVersion: {
+						userId: { userId: userId, versionId: 1 },
+					},
+					versions: {
+						1: {
+							title: '',
+							imageUrl:'',
+							notes: ''
+							}
+								}
+					},
+				}
 
-
+			}
 	//layout template
 	var layout = '';
 	if (node.id == 1) {
@@ -86,6 +108,7 @@
 		</section>
 	{/if}
 </article>
+<div class="bg-blue-900"></div>
 <style>
 	section {
 		width: auto;
