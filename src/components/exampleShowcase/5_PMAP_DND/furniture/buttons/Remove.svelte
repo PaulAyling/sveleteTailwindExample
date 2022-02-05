@@ -1,6 +1,6 @@
 <script>
     export let cardId
-    import { remove } from '../../stores/tools'
+    import { remove } from '../../stores/functions/remove'
     import Fa from 'svelte-fa';
 	import { faTrash } from '@fortawesome/free-solid-svg-icons';
 

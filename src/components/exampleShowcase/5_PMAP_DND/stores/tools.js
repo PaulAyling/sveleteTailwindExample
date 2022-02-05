@@ -2,7 +2,7 @@ import {cardLayout} from './cardLayout'
 import { get } from 'svelte/store';
 
 // UTILS
-const getParentId = (childId) =>{
+export const getParentId = (childId) =>{
 	const findId = (id,myarr)=>{
 	let res
 	for (let i = 0; i < myarr.length; i++) {
@@ -21,7 +21,7 @@ const getParentId = (childId) =>{
 
 
 
-console.log('getParentId',getParentId(6))
+
 
 
 
