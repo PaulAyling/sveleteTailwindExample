@@ -5,9 +5,11 @@
 	import Body from './Body.svelte'
 	import { getParentId } from './stores/tools';
 	import Add from './furniture/buttons/Add.svelte'
-	import { v4 as uuidv4 } from 'uuid';
-	
 
+	import {cards} from './stores/cards'
+	import {authenticatedUser} from './stores/authenticatedUser'
+	import { v4 as uuidv4 } from 'uuid';
+import Alert from './furniture/alert.svelte';
 
 	export let nodes;
 	export let node;
@@ -49,9 +51,15 @@
 		nodes = { ...nodes };
 	}
 	const addRecord = (cardId) =>{
-		console.log('add record running.........', cardId)
-		// nodes[cardId].items.
+		// console.log('add record running.........', cardId)
+		// 1. Create new id
 		const newId = uuidv4()
+		// 2. Add newRecord to nodes
+		nodes[cardId].items.push( {'id':newId})
+		const newNode = {'id':newId,'items':[]}
+		nodes = {...nodes, [newId]:newNode}
+		console.log('nodes!!',nodes)
+		// 3. Add new card to cards
 		const newItem={'id':newId,'items':[]}
 		const newCard = 	
 		{
@@ -60,7 +68,7 @@
 					url: 'd',
 					allTags: [],
 					usersVersion: {
-						userId: { userId: userId, versionId: 1 },
+						userId: { userId: $authenticatedUser.userId, versionId: 1 },
 					},
 					versions: {
 						1: {
@@ -72,7 +80,13 @@
 					},
 				}
 
-			}
+		console.log('newCard',newCard)
+	// 	cards.update((val) => {
+	// 	val = {...val. newCard}
+	// 	return val;
+	// });
+	// nodes = {...nodes}
+}	
 	//layout template
 	var layout = '';
 	if (node.id == 1) {
@@ -83,6 +97,7 @@
 	dragzoneStyle  =  "p-2 rounded-md  bg-blue-" + colorShade
 
 </script>
+
 <article class={dragzoneStyle}>
 	{node.id}
 	<Header cardId={node.id} bind:bodyVisible={bodyVisible} bind:editUrl={editUrl} colorShade={colorShade} 
