@@ -2,6 +2,8 @@
 	import Card from './Card.svelte';
 	import { cardLayout } from './stores/cardLayout';
 	import {cards} from './stores/cards'
+	import ShowPreview from './furniture/buttons/ShowPreview.svelte'
+	import Preview from './Preview.svelte'
 
 	cards.subscribe((value) => {
 		console.log('STORE:CARDS:', value);
@@ -17,8 +19,16 @@
     6: { id: 6, items: [] ,cols:false},
 };
 	let colorShade = 0;
+	let preview = false
+	const cardId = 1
 </script>
 
 <main id="pauls" label="myMain" class=" p-3">
+	<ShowPreview bind:preview={preview} />
+	{#if preview == true}
+	<Preview cardId = {cardId} {nodes}/>
+	{:else}
 	<Card node={nodes[1]} bind:nodes {colorShade} />
+	{/if}
+
 </main>
