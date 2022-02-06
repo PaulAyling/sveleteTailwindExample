@@ -3,7 +3,7 @@
     export let colorShade
     
     let style 
-	  style = " text-blue-100 hover:bg-green-400 hover:text-white rounded p-1 w-full flex-grow  bg-blue-"+colorShade
+	  style = " text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  bg-blue-"+colorShade
 
 </script>
 <div class="px-2 pb-1 rounded-md">

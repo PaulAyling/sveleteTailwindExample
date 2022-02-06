@@ -16,8 +16,10 @@ const importedCards = {
 		versions: {
 			1: {
 				title: 'Which Bicycle Should I Buy',
-				imageUrl: 'https://cdn.mos.cms.futurecdn.net/dpA5bpmPcBM6rPszKB9SpH-1200-80.jpg',
-				notes: 'tbc'
+				imageUrl: 'https://www.cyclingabout.com/wp-content/uploads/2014/01/wpid-Photo-29-Jan-2014-214-pm.jpg',
+				notes: `If you’re in the market for a new bicycle, you’re in very good company. Since the start of 2020 all bike sales have risen by more than 50 percent, and even if you’re reading this guide in 2023, and perhaps sales have finally flattened, that will be at a new, higher bar. The e-bike category in particular has seen astonishing growth lately. Why? One effect of the pandemic was a resurgent interest in outdoor fitness (to avoid COVID-19), and once people rediscovered fresh air and mood-lifting daylight, lots of us realized we never wanted to head back inside for cardiovascular exercise.
+			  
+				That, and a desire to pollute less, especially if you’re lucky enough to work from home, has led to a proliferation of many direct-to-consumer bicycle brands. (We’ll tackle how to buy a bicycle, electrified or not, below, but we’re planting a flag right here to caution that you should carefully read that section before jumping directly to a bike you’d order online.)`
 			},
 			2: {
 				title: 'About Bicycles2',
@@ -39,7 +41,7 @@ const importedCards = {
 				title: 'Road Bikes',
 				imageUrl:
 					'https://cdn.mos.cms.futurecdn.net/dpA5bpmPcBM6rPszKB9SpH-1200-80.jpg',
-				notes: 'Road racing can be fun...'
+				notes: 'A racing bicycle, also known as a road bike, and once popularly known as a ten speed, is a bicycle designed for competitive road cycling, a sport governed by and according to the rules of the Union Cycliste Internationale (UCI). The UCI rules were altered in 1934 to exclude recumbent bicycles.The most important characteristics about a racing bicycle are its weight and stiffness[citation needed] which determine the efficiency at which the power from a riders pedal strokes can be transferred to the drive-train and subsequently to its wheels. To this effect racing bicycles may sacrifice comfort for speed. The drop handlebars are positioned lower than the saddle in order to put the rider in a more aerodynamic posture. The front and back wheels are close together so the bicycle has quick handling. The derailleur gear ratios are closely spaced so that the rider can pedal at their optimum cadence. Other racing bicycles, especially those used in time trialling, prioritize aerodynamics over comfort. '
 			}
 		}
 	},

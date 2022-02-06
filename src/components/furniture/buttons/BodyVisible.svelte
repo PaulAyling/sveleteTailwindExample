@@ -9,5 +9,5 @@
 }
 </script>
 <button  on:click={toggle} class="p-1 text-gray-300">
-    <Fa icon={bodyVisible? faSortDown : faSortUp} class="ml-2 mr-1  text-gray-300 hover:text-blue-500" />
+    <Fa icon={bodyVisible ? faSortDown : faSortUp} class="ml-2 mr-1  text-gray-300 hover:text-blue-500" />
 </button>   
