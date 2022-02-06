@@ -10,27 +10,28 @@
   }
 }
 
-.level0{
+.level1{
   background:#1E3A8A;
 }
-.level5{
+.level2{
   background:#1D4ED8;
 }
-.level10{
+.level3{
   background:#3B82F6
 }
-.level15{
+.level4{
   background:#60A5FA;
 }
-.level20{
-  background:#EA580C;
+.level5{
+  background:#0F766E;
 }
-.level25{
-  background:#F97316;
+.level6{
+  background:#059669; 
 }
-.level30{
-  background:#FB923C
+.level7{
+  background:#10B981;
 }
-.level35{
-  background:#FDBA74;
+
+.level8{
+  background:#14B8A6;
 }

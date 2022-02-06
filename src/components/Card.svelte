@@ -130,7 +130,7 @@
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}
 				<div animate:flip={{ duration: flipDurationMs }} class="item rounded-md p-1 ">
-					<svelte:self bind:nodes node={nodes[item.id]} colorShade={colorShade + 5} />
+					<svelte:self bind:nodes node={nodes[item.id]} colorShade={colorShade + 1} />
 				</div>
 			{/each}
 			<Add cardId={node.id} {addRecord} />

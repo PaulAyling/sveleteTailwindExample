@@ -18,7 +18,7 @@
     5: { id: 5, items: [{ id: 6 }] ,cols:false},
     6: { id: 6, items: [] ,cols:false},
 };
-	let colorShade = 0;
+	let colorShade = 1;
 	let preview = false
 	const cardId = 1
 </script>
