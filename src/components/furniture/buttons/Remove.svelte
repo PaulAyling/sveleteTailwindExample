@@ -14,7 +14,7 @@ let:confirm="{confirmThis}"
 themeColor="200"
 >
 
-<button  on:click={() => confirmThis(removeRecord, cardId)} class="p-2">
+<button  on:click={() => confirmThis(removeRecord, cardId)} class="p-2 text-gray-300">
     <Fa icon={faTrash} />
 </button>
 <span slot="title">

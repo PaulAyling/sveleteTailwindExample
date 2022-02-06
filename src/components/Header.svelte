@@ -10,14 +10,12 @@
 
 	import Input from './furniture/Input.svelte';
 	import Toolbar from './furniture/buttons/Toolbar.svelte';
-	// cards.subscribe((value) => {
-	// 	console.log('STORE:CARDS:', value);
-	// });
 
+	const styleIcon = "mr-2 align-bottom level text-white"
 </script>
 
 <div class="flex flex-row flex-start p-2 items-center">
-	<Fa class="mr-2 align-bottom" icon={faGripVertical} />
+	<Fa class="mr-2 align-bottom text-gray-300" icon={faGripVertical} />
 	{#if editUrl == false}
 		<Input bind:inputText={$cards[cardId].title} inputPlaceholder="write Title" colorShade={colorShade}/>
 	{:else}
@@ -27,4 +25,19 @@
 </div>
 
 <style>
+	
+	.level900{
+		background:#1E3A8A;
+	}
+	.level700{
+		background:#1D4ED8;
+	}
+	.level500{
+		background:#3B82F6
+	}
+	.level300{
+		background:#7DD3FC;
+	}
+
 </style>
+

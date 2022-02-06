@@ -16,7 +16,7 @@
     5: { id: 5, items: [{ id: 6 }] },
     6: { id: 6, items: [] },
 };
-	let colorShade = 900;
+	let colorShade = 0;
 </script>
 
 <main id="pauls" label="myMain" class=" p-3">
