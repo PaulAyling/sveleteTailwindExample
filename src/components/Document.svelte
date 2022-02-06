@@ -1,9 +1,10 @@
 <script>
 	import Card from './Card.svelte';
 	import { cardLayout } from './stores/cardLayout';
+	import {cards} from './stores/cards'
 
-	cardLayout.subscribe((value) => {
-		console.log('STORE:LAYOUT:', value);
+	cards.subscribe((value) => {
+		console.log('STORE:CARDS:', value);
 	});
 
 

@@ -52,18 +52,18 @@ import Alert from './furniture/alert.svelte';
 	}
 	const addRecord = (cardId) =>{
 		// console.log('add record running.........', cardId)
-		// 1. Create new id
-		const newId = uuidv4()
+		// 1. Create new id {using the bottom id - this will have to use newId later}
+		const newId = nodes[Object.keys(nodes)[Object.keys(nodes).length - 1]].id +1
+		console.log('newId',newId)
 		// 2. Add newRecord to nodes
 		nodes[cardId].items.push( {'id':newId})
 		const newNode = {'id':newId,'items':[]}
 		nodes = {...nodes, [newId]:newNode}
-		console.log('nodes!!',nodes)
+		// console.log('nodes!!',nodes)
 		// 3. Add new card to cards
 		const newItem={'id':newId,'items':[]}
 		const newCard = 	
-		{
-			newId: {
+				{
 					componentId: newId,
 					url: 'd',
 					allTags: [],
@@ -77,15 +77,15 @@ import Alert from './furniture/alert.svelte';
 							notes: ''
 							}
 								}
-					},
 				}
+				
 
 		console.log('newCard',newCard)
-	// 	cards.update((val) => {
-	// 	val = {...val. newCard}
-	// 	return val;
-	// });
-	// nodes = {...nodes}
+		cards.update((val) => {
+		val = {...val, [newId]:newCard}
+		return val;
+	});
+	nodes = {...nodes}
 }	
 	//layout template
 	var layout = '';
