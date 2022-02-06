@@ -19,9 +19,9 @@
 <div class="flex flex-row flex-start p-2 items-center">
 	<Fa class="mr-2 align-bottom" icon={faGripVertical} />
 	{#if editUrl == false}
-		<Input bind:inputText={$cards[cardId].title} inputPlaceholder="Url Description" colorShade={colorShade}/>
+		<Input bind:inputText={$cards[cardId].title} inputPlaceholder="write Title" colorShade={colorShade}/>
 	{:else}
-		<Input bind:inputText={$cards[cardId].url} inputPlaceholder="mysite.com/blog" colorShade={colorShade}/>
+		<Input bind:inputText={$cards[cardId].url} inputPlaceholder="url here" colorShade={colorShade}/>
 	{/if}
 	<Toolbar bind:bodyVisible bind:editUrl cardId={cardId}  removeRecord={removeRecord} />
 </div>
