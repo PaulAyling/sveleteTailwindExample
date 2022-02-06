@@ -12,5 +12,5 @@
     $:notes = $cards[cardId].notes
 </script>
     <Tags cardId={cardId}/>
-    <ImageCard bind:imageUrl={imageUrl} title = {title} colorShade={colorShade}/>
+    <ImageCard cardId={cardId} bind:imageUrl={imageUrl} title = {title} colorShade={colorShade} />
     <Notes bind:notes={notes} colorShade={colorShade} />

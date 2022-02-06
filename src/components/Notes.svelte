@@ -2,10 +2,8 @@
     export let notes
     export let colorShade
     
-    var textCol
-	  colorShade < 500 ? textCol = "text-blue-800" : textCol = "text-blue-100"	
     let style 
-	  style = textCol+" hover:bg-green-400 hover:text-white rounded p-1 w-full flex-grow  bg-blue-"+colorShade
+	  style = " text-blue-100 hover:bg-green-400 hover:text-white rounded p-1 w-full flex-grow  bg-blue-"+colorShade
 
 </script>
 <div class="px-2 pb-1 rounded-md">
