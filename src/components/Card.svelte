@@ -132,29 +132,6 @@ import Alert from './furniture/alert.svelte';
 			overflow-y: auto;
 			height: auto;
 		}
-		.level0{
-			background:#1E3A8A;
-		}
-		.level5{
-			background:#1D4ED8;
-		}
-		.level10{
-			background:#3B82F6
-		}
-		.level15{
-			background:#60A5FA;
-		}
-		.level20{
-			background:#EA580C;
-		}
-		.level25{
-			background:#F97316;
-		}
-		.level30{
-			background:#FB923C
-		}
-		.level35{
-			background:#FDBA74;
-		}
+	
 
 	</style>
