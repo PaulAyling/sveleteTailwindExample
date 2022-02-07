@@ -24,13 +24,6 @@
 		});
 	};
 
-	// function handleDndConsider(e) {
-	// 	node.items = e.detail.items;
-	// }
-	// function handleDndFinalize(e) {
-	// 	node.items = e.detail.items;
-	// 	nodes = { ...nodes };
-	// }
 	const removeRecord = (cardId) => {
 		const getParentId = (childId) => {
 			const findId = (id, myarr) => {
@@ -67,26 +60,34 @@
 			val[parentId].items.splice(cardIndex, 1);
 			return val;
 		});
-		// $nodes[parentId].items.splice(cardIndex, 1);
-
 		//2. remove card from nodes
 		nodes.update((val) => {
 			val[cardId].items.splice(cardIndex, 1);
 			return val;
 		});
-		// nodes[cardId].items.splice(cardIndex, 1);
-		// nodes = { ...nodes };
 	};
 	const addRecord = (cardId) => {
-		// console.log('add record running.........', cardId)
+		console.log('add record running.........', cardId)
 		// 1. Create new id {using the bottom id - this will have to use newId later}
-		const newId = nodes[Object.keys(nodes)[Object.keys(nodes).length - 1]].id + 1;
+		const newId = $nodes[Object.keys($nodes)[Object.keys($nodes).length - 1]].id + 1;
 		console.log('newId', newId);
-		// 2. Add newRecord to nodes
-		nodes[cardId].items.push({ id: newId });
+
+		// 2. Add newRecord
+			// to item array 
+		nodes.update((val) => {
+			val[cardId].items.push({ id: newId });
+			return val;
+		});
+		// $nodes[cardId].items.push({ id: newId });
+		
+		//to $nodes
 		const newNode = { id: newId, items: [] };
-		nodes = { ...nodes, [newId]: newNode };
-		// console.log('nodes!!',nodes)
+		nodes.update((val) => {
+			val = { ...val, [newId]: newNode }
+			return val;
+		});
+		// $nodes = { ...nodes, [newId]: newNode };
+		
 		// 3. Add new card to cards
 		const newItem = { id: newId, items: [], cols: false };
 		const newCard = {
@@ -108,7 +109,7 @@
 			val = { ...val, [newId]: newCard };
 			return val;
 		});
-		nodes = { ...nodes };
+
 	};
 	//FORMATTING / CONFIG
 
