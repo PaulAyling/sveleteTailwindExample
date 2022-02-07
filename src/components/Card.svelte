@@ -12,12 +12,12 @@
 	export let node;
 	export let colorShade;
 
-	const handleDndConsider = (e) => {
-		console.log('handleDndConsider:  e.detail.items',e.detail.items)
+	const handleDndConsider = (e,greet) => {
+		console.log('handleDndConsider:  e.detail.items',e.detail.items,greet)
 		node.items = e.detail.items;
 	};
-	const handleDndFinalize = (e) => {
-		console.log('handleDndConsider:  e.node.items', node.items)
+	const handleDndFinalize = (e,greet) => {
+		console.log('handleDndFinalize:  e.node.items', node.items)
 		nodes.update((val) => {
 			val[node.id].items = e.detail.items;
 			return val;
@@ -147,8 +147,8 @@
 	{#if node.hasOwnProperty('items')}
 		<section
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
-			on:consider={handleDndConsider}
-			on:finalize={handleDndFinalize}
+			on:consider={ (e) => handleDndConsider((e),'hi')}
+			on:finalize={(e) => handleDndFinalize((e),'hi')}
 			class={node.cols
 				? 'flex flex-row  rounded-md  bg-green-400'
 				: 'flex flex-col rounded-md  bg-green-400'}
