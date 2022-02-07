@@ -3,27 +3,35 @@
 	import { dndzone, SHADOW_PLACEHOLDER_ITEM_ID } from 'svelte-dnd-action';
 	import Header from './Header.svelte';
 	import Body from './Body.svelte';
-	import { getParentId } from './stores/tools';
 	import Add from './furniture/buttons/Add.svelte';
 
 	import { cards } from './stores/cards';
 	import { authenticatedUser } from './stores/authenticatedUser';
-	import { v4 as uuidv4 } from 'uuid';
-	import Alert from './furniture/alert.svelte';
+	import { nodes } from './stores/cardLayout';
 
-	export let nodes;
+	// export let nodes;
 	export let node;
 	export let colorShade;
+	// export let cardId;
+	console.log('node',node)
 
-	// let node = $cardLayout[cardId]
+	const handleDndConsider = (e) => {
+		node.items = e.detail.items;
+	};
+	const handleDndFinalize = (e) => {
+		nodes.update((val) => {
+			val[node.id].items = node.items;
+			return val;
+		});
+	};
 
-	function handleDndConsider(e) {
-		node.items = e.detail.items;
-	}
-	function handleDndFinalize(e) {
-		node.items = e.detail.items;
-		nodes = { ...nodes };
-	}
+	// function handleDndConsider(e) {
+	// 	node.items = e.detail.items;
+	// }
+	// function handleDndFinalize(e) {
+	// 	node.items = e.detail.items;
+	// 	nodes = { ...nodes };
+	// }
 	const removeRecord = (cardId) => {
 		const getParentId = (childId) => {
 			const findId = (id, myarr) => {
@@ -41,7 +49,7 @@
 			}
 		};
 		const parentId = getParentId(cardId);
-		console.log('parentId',parentId)
+		console.log('parentId', parentId);
 		// alert('no more alerts')
 		console.log('remove Record running....cardId:', cardId);
 		// 1. remove card from items
@@ -72,7 +80,7 @@
 		nodes = { ...nodes, [newId]: newNode };
 		// console.log('nodes!!',nodes)
 		// 3. Add new card to cards
-		const newItem = { id: newId, items: [],cols:false };
+		const newItem = { id: newId, items: [], cols: false };
 		const newCard = {
 			componentId: newId,
 			url: 'd',
@@ -101,21 +109,28 @@
 
 	const flipDurationMs = 300;
 
-    const toggleCols=() =>{
-	console.log('toggleCols Running..')
-    console.log('b',node.cols)
-	node.cols = !node.cols
-    console.log('a',node.cols)
-	node = {...node}
-
-}
+	const toggleCols = () => {
+		console.log('toggleCols Running..');
+		console.log('b', node.cols);
+		node.cols = !node.cols;
+		console.log('a', node.cols);
+		node = { ...node };
+	};
 
 	let dragzoneStyle;
 	dragzoneStyle = 'p-2 rounded-md  level' + String(colorShade);
 </script>
 
 <article class={dragzoneStyle}>
-	<Header cardId={node.id} bind:bodyVisible bind:editUrl {colorShade} {removeRecord} bind:cols={node.cols} {toggleCols}/>
+	<Header
+		cardId={node.id}
+		bind:bodyVisible
+		bind:editUrl
+		{colorShade}
+		{removeRecord}
+		bind:cols={node.cols}
+		{toggleCols}
+	/>
 	{#if bodyVisible}
 		<Body cardId={node.id} {colorShade} />
 	{/if}
@@ -125,12 +140,14 @@
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
 			on:consider={handleDndConsider}
 			on:finalize={handleDndFinalize}
-			class={ node.cols ? 'flex flex-row  rounded-md  bg-green-400': 'flex flex-col rounded-md  bg-green-400'}
+			class={node.cols
+				? 'flex flex-row  rounded-md  bg-green-400'
+				: 'flex flex-col rounded-md  bg-green-400'}
 		>
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}
 				<div animate:flip={{ duration: flipDurationMs }} class="item rounded-md p-1 ">
-					<svelte:self bind:nodes node={nodes[item.id]} colorShade={colorShade + 1} />
+					<svelte:self node={nodes[item.id]} colorShade={colorShade + 1} />
 				</div>
 			{/each}
 			<Add cardId={node.id} {addRecord} />
@@ -147,3 +164,4 @@
 		height: auto;
 	}
 </style>
+
