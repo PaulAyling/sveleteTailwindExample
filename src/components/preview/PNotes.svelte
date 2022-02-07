@@ -1,15 +1,14 @@
 <script>
     export let notes
     export let colorShade
-    export let editable
-    
+
     let style 
 	  style = " text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  bg-blue-"+colorShade
 
 </script>
 <div class="px-2 pb-1 rounded-md">
 
-  <span class={style} role="textbox" contenteditable>{notes}</span>
+  <span class={style} role="textbox" >{notes}</span>
 </div>
 
 <style>
