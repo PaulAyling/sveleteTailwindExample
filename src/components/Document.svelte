@@ -2,7 +2,7 @@
 	import Card from './Card.svelte';
 	import {cards} from './stores/cards'
 	import ShowPreview from './furniture/buttons/ShowPreview.svelte'
-	import Preview from './Preview.svelte'
+	import Preview from './preview/Preview.svelte'
 	import {nodes} from './stores/cardLayout'
 
 	cards.subscribe((value) => {
@@ -10,14 +10,14 @@
 	});
 
 	let colorShade = 1;
-	let preview = false
+	let preview = true
 	const cardId = 1
 </script>
 
 <main id="pauls" label="myMain" class=" p-3">
 	<ShowPreview bind:preview={preview} />
 	{#if preview == true}
-	<Preview cardId = {cardId} {nodes}/>
+	<Preview {cardId}/>
 	{:else}
 	<Card node={$nodes[1]}  {colorShade} />
 	{/if}

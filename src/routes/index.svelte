@@ -1,6 +1,6 @@
 <script>
     import PMP from '../components/Document.svelte'
-    // import ClassBug from '../components/scratch/1_classBug/CardBug.svelte'
+    import Preview from '../components/preview/Preview.svelte'
 </script>
     <PMP/>
-<!-- <ClassBug/> -->
+<!-- <Preview/> -->
