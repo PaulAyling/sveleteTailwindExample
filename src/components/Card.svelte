@@ -12,12 +12,16 @@
 	export let node;
 	export let colorShade;
 
-	const handleDndConsider = (e) => {
-		console.log('handleDndConsider:  e.detail.items',e.detail.items)
+	// I would like to move all these functions into cardLayout store but cant figure out how to get the args to carry up to date data
+	// Functions work "in place"
+
+	const handleDndConsider = (e, greet) => {
+		//if I put node into the arg it goes horribly wrong so I will leave it for now
+		console.log('handleDndConsider:  e.detail.items', e.detail.items, greet);
 		node.items = e.detail.items;
 	};
-	const handleDndFinalize = (e) => {
-		console.log('handleDndConsider:  e.node.items', node.items)
+	const handleDndFinalize = (e, greet, node) => {
+		console.log('handleDndConsider:  e.node.items', node.items, greet);
 		nodes.update((val) => {
 			val[node.id].items = e.detail.items;
 			return val;
@@ -67,27 +71,27 @@
 		});
 	};
 	const addRecord = (cardId) => {
-		console.log('add record running.........', cardId)
+		console.log('add record running.........', cardId);
 		// 1. Create new id {using the bottom id - this will have to use newId later}
 		const newId = $nodes[Object.keys($nodes)[Object.keys($nodes).length - 1]].id + 1;
 		console.log('newId', newId);
 
 		// 2. Add newRecord
-			// to item array 
+		// to item array
 		nodes.update((val) => {
 			val[cardId].items.push({ id: newId });
 			return val;
 		});
 		// $nodes[cardId].items.push({ id: newId });
-		
+
 		//to $nodes
 		const newNode = { id: newId, items: [] };
 		nodes.update((val) => {
-			val = { ...val, [newId]: newNode }
+			val = { ...val, [newId]: newNode };
 			return val;
 		});
 		// $nodes = { ...nodes, [newId]: newNode };
-		
+
 		// 3. Add new card to cards
 		const newItem = { id: newId, items: [], cols: false };
 		const newCard = {
@@ -109,7 +113,6 @@
 			val = { ...val, [newId]: newCard };
 			return val;
 		});
-
 	};
 	//FORMATTING / CONFIG
 
@@ -128,6 +131,8 @@
 
 	let dragzoneStyle;
 	dragzoneStyle = 'p-2 rounded-md  level' + String(colorShade);
+	// this variable proves that I can put a variable in to the function
+	const greet = 'Good morining';
 </script>
 
 <article class={dragzoneStyle}>
@@ -147,8 +152,8 @@
 	{#if node.hasOwnProperty('items')}
 		<section
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
-			on:consider={handleDndConsider}
-			on:finalize={handleDndFinalize}
+			on:consider={(e) => handleDndConsider(e, greet, node)}
+			on:finalize={(e) => handleDndFinalize(e, greet, node)}
 			class={node.cols
 				? 'flex flex-row  rounded-md  bg-green-400'
 				: 'flex flex-col rounded-md  bg-green-400'}
@@ -173,4 +178,3 @@
 		height: auto;
 	}
 </style>
-

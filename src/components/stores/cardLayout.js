@@ -10,3 +10,15 @@ export const nodes = writable({
 
 
 
+export const handleDndConsider = (e, greet,node) => {
+    //if I put node into the arg it goes horribly wrong so I will leave it for now
+    console.log('handleDndConsider:  e.detail.items', e.detail.items, greet);
+    node.items = e.detail.items;
+};
+export const handleDndFinalize = (e, greet, node) => {
+    console.log('handleDndConsider:  e.node.items', node.items, greet);
+    nodes.update((val) => {
+        val[node.id].items = e.detail.items;
+        return val;
+    });
+};
