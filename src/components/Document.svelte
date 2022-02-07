@@ -29,7 +29,7 @@
 	{#if preview == true}
 	<Preview cardId = {cardId} {nodes}/>
 	{:else}
-	<Card node={nodes[1]}  {colorShade} />
+	<Card node={$nodes[1]}  {colorShade} />
 	{/if}
 
 </main>
