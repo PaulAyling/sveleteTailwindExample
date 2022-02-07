@@ -9,18 +9,17 @@
 	import { authenticatedUser } from './stores/authenticatedUser';
 	import { nodes } from './stores/cardLayout';
 
-	// export let nodes;
 	export let node;
 	export let colorShade;
-	// export let cardId;
-	console.log('node',node.id)
 
 	const handleDndConsider = (e) => {
+		console.log('handleDndConsider:  e.detail.items',e.detail.items)
 		node.items = e.detail.items;
 	};
 	const handleDndFinalize = (e) => {
+		console.log('handleDndConsider:  e.node.items', node.items)
 		nodes.update((val) => {
-			val[node.id].items = node.items;
+			val[node.id].items = e.detail.items;
 			return val;
 		});
 	};
@@ -41,8 +40,8 @@
 				}
 				return false;
 			};
-			for (const key in nodes) {
-				let nodeArr = nodes[key].items;
+			for (const key in $nodes) {
+				let nodeArr = $nodes[key].items;
 				if (findId(childId, nodeArr) == true) {
 					return key;
 				}
@@ -54,7 +53,7 @@
 		console.log('remove Record running....cardId:', cardId);
 		// 1. remove card from items
 
-		const items = nodes[parentId].items;
+		const items = $nodes[parentId].items;
 		const getIndex = () => {
 			for (let i = 0; i < items.length; i++) {
 				console.log('LOOP:', items[i]);
@@ -64,10 +63,19 @@
 			}
 		};
 		const cardIndex = getIndex(cardId);
-		nodes[parentId].items.splice(cardIndex, 1);
+		nodes.update((val) => {
+			val[parentId].items.splice(cardIndex, 1);
+			return val;
+		});
+		// $nodes[parentId].items.splice(cardIndex, 1);
+
 		//2. remove card from nodes
-		nodes[cardId].items.splice(cardIndex, 1);
-		nodes = { ...nodes };
+		nodes.update((val) => {
+			val[cardId].items.splice(cardIndex, 1);
+			return val;
+		});
+		// nodes[cardId].items.splice(cardIndex, 1);
+		// nodes = { ...nodes };
 	};
 	const addRecord = (cardId) => {
 		// console.log('add record running.........', cardId)
