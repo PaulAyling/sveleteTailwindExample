@@ -17,7 +17,7 @@
 <main id="pauls" label="myMain" class=" p-3">
 	<ShowPreview bind:preview={preview} />
 	{#if preview == true}
-	<Preview {cardId}/>
+	<Preview {cardId} {colorShade} node={$nodes[1]}/>
 	{:else}
 	<Card node={$nodes[1]}  {colorShade} />
 	{/if}

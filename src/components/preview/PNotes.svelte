@@ -3,20 +3,21 @@
     export let colorShade
 
     let style 
-	  style = " text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  bg-blue-"+colorShade
+	  style = " text-blue-100  rounded p-1 w-full flex-grow  bg-blue-"+colorShade
 
 </script>
 <div class="px-2 pb-1 rounded-md">
 
-  <span class={style} role="textbox" >{notes}</span>
+  <pre class={style} role="textbox" >{notes}</pre>
 </div>
 
 <style>
-
-.textarea:hover{
-    background:white;
-    color:#DBEAFE;
+pre{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
+
 .textarea {
   border: 1px solid #22c55e;
   font-family: inherit;

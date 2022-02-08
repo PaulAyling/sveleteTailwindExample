@@ -14,14 +14,17 @@
 	import Toolbar from './furniture/buttons/Toolbar.svelte';
 </script>
 
-<div class="flex flex-row flex-start p-2 items-center">
-	<Fa class="mr-2 align-bottom text-blue-200" icon={faGripVertical} />
+<div class="flex flex-col flex-start p-2 items-center">
+	<div class="mr-2  flex flex-row">
+		<Fa class="text-blue-200" icon={faGripVertical} />
 	{#if editUrl == false}
 		<Input bind:inputText={$cards[cardId].title} inputPlaceholder="Enter title" {colorShade} />
 	{:else}
 		<Input bind:inputText={$cards[cardId].url} inputPlaceholder="Enter url" {colorShade} />
 	{/if}
-	<Toolbar bind:bodyVisible bind:editUrl {cardId} {removeRecord} bind:cols={cols} {toggleCols}/>
+	</div>
+
+	<Toolbar bind:bodyVisible bind:editUrl {cardId} {removeRecord} bind:cols {toggleCols} />
 </div>
 
 <style>

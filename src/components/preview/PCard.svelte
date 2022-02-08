@@ -1,9 +1,12 @@
 <script>
 	export let cardId;
+	export let colorShade;
+
 	import { cards } from '../stores/cards';
 	import { nodes } from '../stores/cardLayout';
 	import PNotes from './PNotes.svelte';
-	import Tags from '../Tags.svelte'
+	import Tags from '../Tags.svelte';
+	import PHeader from './PHeader.svelte';
 	console.log('cardId', cardId);
 	cards.subscribe((value) => {
 		console.log('STORE:CARDS:', value[cardId]);
@@ -13,23 +16,36 @@
 	$: title = $cards[cardId].title;
 	$: notes = $cards[cardId].notes;
 	// console.log(imageUrl,title,notes)
-	const colorShade = 1;
+	let bodyVisible = false;
+	let editUrl = false;
+	let removeRecord = 'delete';
+	let toggleCols = 'delete';
+
+	const dragZoneStyle = $nodes[cardId].cols ? 'w-full p-1  rounded-t-md flex flex-row':'w-full p-1  rounded-t-md flex flex-col'
+
 </script>
 
-<article class="p-5 rounded-md  level1">
-		<header class="flex flex-row flex-start p-2 items-center">
-			<a class="text-green-400 p-2 w-full hover:underline hover:underline-offset-4 " href="url"
-				>{title}</a
-			>
-<Tags {cardId}/>
-		</header>
+<article class={"px-1 rounded-md m-1 level"+colorShade}>
+	<PHeader
+		{cardId}
+		bind:bodyVisible
+		bind:editUrl
+		{colorShade}
+		{removeRecord}
+		bind:cols={$nodes[cardId].cols}
+		{toggleCols}
+	/>
+	{#if bodyVisible}
 		<body>
+			<!-- <Tags {cardId}/> -->
 			<img src={imageUrl} alt={title} class="image rounded-md" style="width:100%" />
 			<PNotes {notes} {colorShade} />
-
-			<section class="bg-green-400 h-48 w-full p-10  rounded-md">something</section>
-
 			<body />
 		</body>
-
+	{/if}
+	<section class={dragZoneStyle}>
+		{#each $nodes[cardId].items as item}
+			<svelte:self cardId={item.id} colorShade={colorShade+1} />
+		{/each}
+	</section>
 </article>

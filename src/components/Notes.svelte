@@ -9,11 +9,15 @@
 </script>
 <div class="px-2 pb-1 rounded-md">
 
-  <span class={style} role="textbox" contenteditable>{notes}</span>
+  <pre class={style} role="textbox" contenteditable>{notes}</pre>
 </div>
 
 <style>
-
+pre{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+}
 .textarea:hover{
     background:white;
     color:#DBEAFE;
