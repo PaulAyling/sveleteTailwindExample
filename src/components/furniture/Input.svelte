@@ -7,7 +7,7 @@
 
 </script>
 <input
-	class={"text-blue-100 placeholder:text-green-400 rounded p-1 w-full flex-grow level"+colorShade}
+	class={"text-blue-100 placeholder:text-green-400 rounded p-1 min-w-48 flex-grow level"+colorShade}
 	type="text"
 	id="fname"
 	name="firstname"

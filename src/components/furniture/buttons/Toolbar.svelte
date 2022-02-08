@@ -13,6 +13,6 @@
 <nav class="flex flex-row">
     <Remove cardId={cardId}  removeRecord={removeRecord}/>
     <ShowUrl bind:editUrl={editUrl}/>
-    <Cols bind:cols={cols} {toggleCols}/>
+    <!-- <Cols bind:cols={cols} {toggleCols}/> -->
     <BodyVisible bind:bodyVisible={bodyVisible}/>
 </nav>  
