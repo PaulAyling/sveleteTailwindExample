@@ -10,7 +10,7 @@
 	});
 
 	let colorShade = 1;
-	let preview = true
+	let preview = false
 	const cardId = 1
 </script>
 

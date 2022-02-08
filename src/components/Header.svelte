@@ -14,9 +14,9 @@
 	import Toolbar from './furniture/buttons/Toolbar.svelte';
 </script>
 
-<div class="flex flex-row flex-wrap justify-between">
-	<div class="flex flex-row ">
-		<Fa class="text-blue-200 align-text-bottom" icon={faGripVertical} />
+<div class="flex flex-row flex-wrap justify-between ">
+	<div class="flex flex-rowitems-center ">
+		<Fa class="mr-2 pt-2 text-blue-200 align-bottom " icon={faGripVertical} />
 		{#if editUrl == false}
 			<Input bind:inputText={$cards[cardId].title} inputPlaceholder="Enter title" {colorShade} />
 		{:else}

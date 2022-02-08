@@ -35,3 +35,9 @@
 .level8{
   background:#14B8A6;
 }
+button{
+  font-size: 0.7em;
+}
+button:hover{
+  color:#10B981
+}
