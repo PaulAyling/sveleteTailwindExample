@@ -1,14 +1,19 @@
 <script>
-    export let notes
+    // export let notes
+    export let cardId
     export let colorShade
     export let editable
+    import {cards} from './stores/cards'
+
+    const newShade = colorShade +1
     
     let style 
-	  style = " text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  bg-blue-"+colorShade
+	  style ="textarea text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  level"+newShade
+    console.log('style', style)
 
 </script>
 <div class="px-2 pb-1 rounded-md">
-  <pre class={style} placeholder="Enter Notes"  role="textbox" contenteditable>{notes}</pre>
+  <pre  class={style} placeholder="Enter Notes"  role="textbox" contenteditable bind:innerHTML={$cards[cardId].notes}></pre>
 </div>
 
 <style>
@@ -18,8 +23,7 @@ pre{
   text-align: justify;
 }
 .textarea:hover{
-    background:white;
-    color:#DBEAFE;
+  opacity:50;
 }
 .textarea {
   border: 1px solid #22c55e;
@@ -36,7 +40,7 @@ pre{
   line-height: 20px;
 }
 .textarea[contenteditable]:empty::before {
-  content: "Comments";
+  content: "You can add notes here";
 }
 
 </style>

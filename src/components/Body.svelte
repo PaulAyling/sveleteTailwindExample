@@ -13,4 +13,4 @@
 </script>
     <Tags cardId={cardId}/>
     <ImageCard cardId={cardId} bind:imageUrl={imageUrl} title = {title} colorShade={colorShade} />
-    <Notes bind:notes={notes} colorShade={colorShade} />
+    <Notes  cardId={cardId} colorShade={colorShade} />

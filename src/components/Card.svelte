@@ -160,9 +160,7 @@
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
 			on:consider={(e) => handleDndConsider(e, greet, node)}
 			on:finalize={(e) => handleDndFinalize(e, greet, node)}
-			class={node.cols
-				? 'flex flex-row  rounded-md  bg-green-400'
-				: 'flex flex-col rounded-md  bg-green-400'}
+			
 		>
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}

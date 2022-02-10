@@ -6,6 +6,6 @@
 
 
 </script>
-<button  on:click={toggleCols} class="p-1 text-gray-300">
+<button  on:click={toggleCols} class="p-1 text-gray-300 cursor-auto">
     <Fa icon={cols? faAlignJustify : faColumns} class="ml-2 mr-1  text-gray-300 hover:text-blue-500" />
 </button>   

@@ -8,6 +8,6 @@
 	};
 </script>
 
-<button on:click={toggle} class="p-1 text-blue-200">
+<button on:click={toggle} class="p-1 text-blue-200 cursor-auto">
 	<Fa icon={bodyVisible ? faSortDown : faSortUp} class="ml-2 mr-1 " />
 </button>
