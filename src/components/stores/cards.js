@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from 'svelte-local-storage-store'
 import { authenticatedUser } from './authenticatedUser';
 import { get } from 'svelte/store';
 
@@ -155,6 +155,7 @@ const createUsersCards = (importedCards, versionIdLookup) => {
 	return res;
 };
 const usersCard = createUsersCards(importedCards, versionIdLookup);
-
 // 3. Create a new store containing only records for authenticated user
-export const cards = writable(usersCard);
+// export const cards = writable(usersCard);
+
+export const cards = writable('cards', usersCard)

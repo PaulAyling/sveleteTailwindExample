@@ -1,10 +1,14 @@
 <script>
-	import Card from './Card.svelte';
+	import { get } from 'svelte/store'
 	import {cards} from './stores/cards'
+	import {nodes} from './stores/nodes'
+	import Card from './Card.svelte';
 	import ShowPreview from './furniture/buttons/ShowPreview.svelte'
 	import Preview from './preview/Preview.svelte'
-	import {nodes} from './stores/cardLayout'
 
+	nodes.subscribe((value) => {
+		console.log('STORE:nodes:', value);
+	});
 	cards.subscribe((value) => {
 		console.log('STORE:CARDS:', value);
 	});

@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "svelte-confirm": "^0.0.0",
     "svelte-dnd-action": "^0.9.14",
+    "svelte-local-storage-store": "^0.2.6",
     "uuid": "^8.3.2"
   }
 }

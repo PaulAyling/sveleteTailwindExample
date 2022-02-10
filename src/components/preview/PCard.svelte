@@ -3,7 +3,7 @@
 	export let colorShade;
 
 	import { cards } from '../stores/cards';
-	import { nodes } from '../stores/cardLayout';
+	import { nodes } from '../stores/nodes';
 	import PNotes from './PNotes.svelte';
 	import Tags from '../Tags.svelte';
 	import PHeader from './PHeader.svelte';

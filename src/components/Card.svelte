@@ -7,7 +7,7 @@
 
 	import { cards } from './stores/cards';
 	import { authenticatedUser } from './stores/authenticatedUser';
-	import { nodes } from './stores/cardLayout';
+	import { nodes } from './stores/nodes';
 
 	export let node;
 	export let colorShade;
