@@ -85,7 +85,7 @@
 		// $nodes[cardId].items.push({ id: newId });
 
 		//to $nodes
-		const newNode = { id: newId, items: [] };
+		const newNode = { id: newId, items: [],cols:false };
 		nodes.update((val) => {
 			val = { ...val, [newId]: newNode };
 			return val;
@@ -96,8 +96,10 @@
 		const newItem = { id: newId, items: [], cols: false };
 		const newCard = {
 			componentId: newId,
-			url: 'd',
+			url: null,
+			imageUrl:null,
 			allTags: [],
+			notes:null,
 			usersVersion: {
 				userId: { userId: $authenticatedUser.userId, versionId: 1 }
 			},
@@ -105,10 +107,14 @@
 				1: {
 					title: '',
 					imageUrl: '',
-					notes: ''
+		
 				}
 			}
 		};
+
+
+
+		console.log('newCard', newCard)
 		cards.update((val) => {
 			val = { ...val, [newId]: newCard };
 			return val;

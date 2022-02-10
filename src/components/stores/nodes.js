@@ -1,7 +1,7 @@
 import { writable } from 'svelte-local-storage-store'
 
 export const nodes = writable('nodes', {
-    1: { id: 1, items: [{ id: 2 },{ id: 3 }] ,cols:true},
+    1: { id: 1, items: [{ id: 2 },{ id: 3 }] ,cols:false},
     2: { id: 2, items: [{ id: 4 },{id: 5}] ,cols:false},
     3: { id: 3, items: [] ,cols:false},
     4: { id: 4, items: [] ,cols:false},

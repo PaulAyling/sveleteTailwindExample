@@ -8,8 +8,7 @@
 
 </script>
 <div class="px-2 pb-1 rounded-md">
-
-  <pre class={style} role="textbox" contenteditable>{notes}</pre>
+  <pre class={style} placeholder="Enter Notes"  role="textbox" contenteditable>{notes}</pre>
 </div>
 
 <style>

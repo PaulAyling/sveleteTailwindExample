@@ -7,8 +7,8 @@
 	import ChangeImage from '../ChangeImage.svelte';
 </script>
 
-<div class="container hoverwrap rounded-md max-w-6xl p-2 min-h-48">
-	<img src={imageUrl} alt={title} class="image rounded-md" style="width:100%" />
+<div class="container hoverwrap rounded-md max-w-6xl p-2 min-h-48 text-slate-300">
+	<img  src={imageUrl} alt={imageUrl ? title :''} class="image rounded-md" style="width:100%" />
 	<div class="middle">
 		<!-- <div class="text">Change Image</div> -->
 		<!-- <Input bind:inputText={imageUrl} inputPlaceholder='myurl' colorShade={colorShade}/> -->
