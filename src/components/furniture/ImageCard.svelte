@@ -7,7 +7,7 @@
 	import ChangeImage from '../ChangeImage.svelte';
 </script>
 
-<div class="container hoverwrap rounded-md max-w-6xl p-2 min-h-48 text-slate-300">
+<div class="container hoverwrap rounded-md max-w-6xl p-2 myMinH  bg-blue-200 text-slate-300 mb-2 ">
 	<img  src={imageUrl} alt={imageUrl ? title :''} class="image rounded-md" style="width:100%" />
 	<div class="middle">
 		<!-- <div class="text">Change Image</div> -->
@@ -55,5 +55,8 @@
 		color: white;
 		font-size: 16px;
 		padding: 16px 32px;
+	}
+	.myMinH{
+		min-height: 200px;
 	}
 </style>

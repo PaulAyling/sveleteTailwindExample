@@ -15,8 +15,8 @@
 </script>
 
 <div class="flex flex-row flex-wrap justify-between ">
-	<div class="flex flex-rowitems-center ">
-		<Fa class="mr-2 text-blue-200 align-bottom cursor-move border-solid border-black" icon={faGripVertical} />
+	<div class="flex flex-row items-center ">
+		<Fa class=" text-blue-200 align-bottom cursor-move text-xs" icon={faGripVertical} />
 		{#if editUrl == false}
 			<Input bind:inputText={$cards[cardId].title} inputPlaceholder="Enter title" {colorShade} />
 		{:else}

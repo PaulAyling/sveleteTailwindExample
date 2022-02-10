@@ -15,7 +15,7 @@
 
 <div class="flex flex-row flex-start p-2 items-center">
 	<!-- <img src={$cards[cardId].imageUrl} alt={$cards[cardId].title} class="image w-10 " style="w-24 h 24" /> -->
-    <a class="text-green-400 w-full hover:underline hover:underline-offset-4 " href="url">
+    <a class="text-blue-100 w-full hover:underline hover:text-green-500 hover:underline-offset-4 " href="url">
     {$cards[cardId].title}</a>
 	<PToolbar bind:bodyVisible bind:editUrl {cardId} {removeRecord} bind:cols {toggleCols} />
 </div>

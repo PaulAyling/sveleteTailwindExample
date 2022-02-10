@@ -23,7 +23,10 @@
 	{#if preview == true}
 	<Preview {cardId} {colorShade} node={$nodes[1]}/>
 	{:else}
-	<Card node={$nodes[1]}  {colorShade} />
+	<div class={"p-2 rounded-md level"+colorShade} >
+			<Card node={$nodes[1]}  {colorShade} />
+	</div>
+
 	{/if}
 
 </main>

@@ -8,11 +8,11 @@
     const newShade = colorShade +1
     
     let style 
-	  style ="textarea text-blue-100 hover:text-green-400 rounded p-1 w-full flex-grow  level"+newShade
+	  style ="textarea text-blue-100 hover:text-green-400 rounded w-full flex-grow "
     console.log('style', style)
 
 </script>
-<div class="px-2 pb-1 rounded-md">
+<div class=" pb-1 rounded-md">
   <pre  class={style} placeholder="Enter Notes"  role="textbox" contenteditable bind:innerHTML={$cards[cardId].notes}></pre>
 </div>
 

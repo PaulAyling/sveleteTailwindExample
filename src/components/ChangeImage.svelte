@@ -20,9 +20,9 @@
 
 
 
-<div>
+<div class="blue-900 rounded-md h-24">
     <Input bind:inputText={newUrl} inputPlaceholder="Enter new url" {colorShade} />
-    <button  on:click={() => addNewUrl(newUrl,cardId)} class="p-2 text-white bg-green-400 rounded-md">
+    <button  on:click={() => addNewUrl(newUrl,cardId)} class="mt-3 p-2 text-white bg-green-400 rounded-md">
         submit
     </button>
 </div>

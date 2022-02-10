@@ -23,17 +23,29 @@
   background:#60A5FA;
 }
 .level5{
-  background:#0F766E;
+  background:#1E3A8A;
 }
 .level6{
-  background:#059669; 
+  background:#1D4ED8;
 }
 .level7{
-  background:#10B981;
+  background:#3B82F6
 }
 
 .level8{
-  background:#14B8A6;
+  background:#60A5FA;
+}
+.level9{
+  background:#1E3A8A;
+}
+.level10{
+  background:#1E3A8A;
+}
+.level11{
+  background:#1E3A8A;
+}
+.level12{
+  background:#1E3A8A;
 }
 button{
   font-size: 0.7em;
