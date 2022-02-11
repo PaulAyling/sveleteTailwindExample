@@ -24,7 +24,7 @@
 	<Preview {cardId} {colorShade} node={$nodes[1]}/>
 	{:else}
 	<div class={"p-2 rounded-md level"+colorShade} >
-			<Card {cardId} node={$nodes[1]}  {colorShade} />
+			<Card cardId = {cardId} node={$nodes[1]}  {colorShade} />
 	</div>
 
 	{/if}

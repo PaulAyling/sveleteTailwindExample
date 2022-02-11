@@ -13,6 +13,7 @@
 	export let colorShade;
 	export let cardId
 
+	console.log('cardId', cardId ,'nodeId', node.id)
 	// I would like to move all these functions into cardLayout store but cant figure out how to get the args to carry up to date data
 	// Functions work "in place"
 
@@ -139,11 +140,13 @@
 		nodes.update((val) => {
 			val[node.id].cols = !val[node.id].cols
 			console.log('val',val,node.id)
+
 			return val;
+			
 		});
 	};
 
-	const dragZoneStyle = $nodes[node.id].cols ? 'w-full p-1  rounded-t-md flex flex-row level' +colorShade:'w-full p-1  rounded-t-md flex flex-col level' +colorShade
+	$:dragZoneStyle = $nodes[node.id].cols ? 'w-full p-1  rounded-t-md flex flex-row level' +colorShade:'w-full p-1  rounded-t-md flex flex-col level' +colorShade
 
 </script>
 
@@ -158,7 +161,7 @@
 		{toggleCols}
 	/>
 	{#if bodyVisible}
-		<Body cardId={node.id} {colorShade} />
+		<Body cardId={cardId} {colorShade} />
 	{/if}
 	<!-- DROPZONE -->
 	{#if node.hasOwnProperty('items')}
