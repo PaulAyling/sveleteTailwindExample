@@ -136,7 +136,7 @@
 	};
 
 	let dragzoneStyle;
-	dragzoneStyle = 'p-2 rounded-md  level' + String(colorShade);
+	dragzoneStyle = 'p-2 rounded-md max-w-6xl min-w-3xl level' + String(colorShade);
 	// this variable proves that I can put a variable in to the function
 	const greet = 'Good morining';
 </script>

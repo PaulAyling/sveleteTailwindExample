@@ -7,11 +7,9 @@
 	import ChangeImage from '../ChangeImage.svelte';
 </script>
 
-<div class="container hoverwrap rounded-md max-w-6xl p-2 myMinH  bg-blue-200 text-slate-300 mb-2 ">
+<div class={imageUrl ? "container hoverwrap rounded-md max-w-6xl p-2 myMinH text-slate-300 mb-2 " : "container hoverwrap rounded-md max-w-6xl p-2 myMinH text-slate-300 mb-2 bg-blue-200"}>
 	<img  src={imageUrl} alt={imageUrl ? title :''} class="image rounded-md" style="width:100%" />
 	<div class="middle">
-		<!-- <div class="text">Change Image</div> -->
-		<!-- <Input bind:inputText={imageUrl} inputPlaceholder='myurl' colorShade={colorShade}/> -->
 		<ChangeImage {colorShade} cardId={cardId}/>
 	</div>
 </div>

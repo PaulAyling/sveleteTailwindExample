@@ -51,5 +51,7 @@ button{
   font-size: 0.7em;
 }
 button:hover{
-  color:#10B981
+  color:#F87171;
+  font-size:larger;
+  padding:1px;
 }

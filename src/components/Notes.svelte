@@ -7,13 +7,9 @@
 
     const newShade = colorShade +1
     
-    let style 
-	  style ="textarea text-blue-100 hover:text-green-400 rounded w-full flex-grow "
-    console.log('style', style)
-
 </script>
-<div class=" pb-1 rounded-md">
-  <pre  class={style} placeholder="Enter Notes"  role="textbox" contenteditable bind:innerHTML={$cards[cardId].notes}></pre>
+<div class={$cards[cardId].notes ? " pb-1 rounded-md max-w-6xl" : " pb-1 rounded-md max-w-6xl bg-blue-200 "} >
+  <pre  class="textarea text-blue-100  hover:text-green-400 rounded w-full flex-grow" placeholder="Enter Notes"  role="textbox" contenteditable bind:innerHTML={$cards[cardId].notes}></pre>
 </div>
 
 <style>
@@ -26,7 +22,6 @@ pre{
   opacity:50;
 }
 .textarea {
-  border: 1px solid #22c55e;
   font-family: inherit;
   font-size: inherit;
   padding: 1px 6px;
@@ -40,7 +35,7 @@ pre{
   line-height: 20px;
 }
 .textarea[contenteditable]:empty::before {
-  content: "You can add notes here";
+  content: "Optional Notes";
 }
 
 </style>
