@@ -11,6 +11,7 @@
 
 	export let node;
 	export let colorShade;
+	export let cardId
 
 	// I would like to move all these functions into cardLayout store but cant figure out how to get the args to carry up to date data
 	// Functions work "in place"
@@ -127,21 +128,26 @@
 
 	const flipDurationMs = 300;
 
+	// const toggleCols = () => {
+	// 	console.log('toggleCols Running..');
+	// 	console.log('b', node.cols);
+	// 	node.cols = !node.cols;
+	// 	console.log('a', node.cols);
+	// 	node = { ...node };
+	// };
 	const toggleCols = () => {
-		console.log('toggleCols Running..');
-		console.log('b', node.cols);
-		node.cols = !node.cols;
-		console.log('a', node.cols);
-		node = { ...node };
+		nodes.update((val) => {
+			val[node.id].cols = !val[node.id].cols
+			console.log('val',val,node.id)
+			return val;
+		});
 	};
 
-	let dragzoneStyle;
-	dragzoneStyle = 'p-2 rounded-md max-w-6xl min-w-3xl level' + String(colorShade);
-	// this variable proves that I can put a variable in to the function
-	const greet = 'Good morining';
+	const dragZoneStyle = $nodes[node.id].cols ? 'w-full p-1  rounded-t-md flex flex-row level' +colorShade:'w-full p-1  rounded-t-md flex flex-col level' +colorShade
+
 </script>
 
-<article class={dragzoneStyle}>
+<article class={dragZoneStyle}>
 	<Header
 		cardId={node.id}
 		bind:bodyVisible
