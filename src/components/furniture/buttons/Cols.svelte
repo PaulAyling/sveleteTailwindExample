@@ -7,5 +7,5 @@
 
 </script>
 <button  on:click={toggleCols} class="p-1 text-gray-300 cursor-auto">
-    <Fa icon={cols? faAlignJustify : faColumns} class="ml-2 mr-1  text-gray-300 hover:text-blue-500" />
+    <Fa icon={cols? faColumns :faAlignJustify } class="ml-1 mr-1  text-blue-200" />
 </button>   

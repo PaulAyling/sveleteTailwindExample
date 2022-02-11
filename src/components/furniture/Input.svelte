@@ -7,11 +7,11 @@
 
 </script>
 <input
-	class={"text-blue-100 placeholder:text-green-400 rounded p-1 pl-2 flex-grow level"+colorShade}
+	class={" text-blue-100 placeholder:text-blue-400   hover:text-blue-600 rounded p-1 pl-2 flex-grow level"+colorShade}
 	type="text"
 	id="fname"
 	name="firstname"
-	size=18
+	size=14
     bind:value={inputText}
 	placeholder={inputPlaceholder}
 />
@@ -19,4 +19,5 @@
 	.inputText{
 		color:red;
 	}
+
 </style>

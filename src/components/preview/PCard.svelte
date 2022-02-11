@@ -49,3 +49,8 @@
 		{/each}
 	</section>
 </article>
+<style>
+		article{
+		min-width: 300px;
+	}
+</style>

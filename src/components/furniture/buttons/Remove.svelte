@@ -12,6 +12,7 @@ confirmTitle="Delete"
 cancelTitle="Cancel"
 let:confirm="{confirmThis}"
 themeColor="200"
+class="bg-red-500"
 >
 
 <button  on:click={() => confirmThis(removeRecord, cardId)} class="p-2 text-gray-300">
@@ -23,4 +24,4 @@ themeColor="200"
   <span slot="description">
     You won't be able to revert this!
   </span>
-</Confirm>
+</Confirm >

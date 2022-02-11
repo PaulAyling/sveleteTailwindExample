@@ -50,8 +50,4 @@
 button{
   font-size: 0.7em;
 }
-button:hover{
-  color:#F87171;
-  font-size:larger;
-  padding:1px;
-}
+

@@ -13,7 +13,6 @@
 	export let colorShade;
 	export let cardId
 
-	console.log('cardId', cardId ,'nodeId', node.id)
 	// I would like to move all these functions into cardLayout store but cant figure out how to get the args to carry up to date data
 	// Functions work "in place"
 
@@ -145,12 +144,12 @@
 			
 		});
 	};
-
+	const greet = 'placeholder for the consider & finalize functions' 
 	$:dragZoneStyle = $nodes[node.id].cols ? 'w-full p-1  rounded-t-md flex flex-row level' +colorShade:'w-full p-1  rounded-t-md flex flex-col level' +colorShade
 
 </script>
 
-<article class={dragZoneStyle}>
+<article class={"w-full p-2  rounded-md flex flex-col m-1  level" +colorShade}>
 	<Header
 		cardId={node.id}
 		bind:bodyVisible
@@ -161,7 +160,7 @@
 		{toggleCols}
 	/>
 	{#if bodyVisible}
-		<Body cardId={cardId} {colorShade} />
+		<Body cardId={node.id} {colorShade} />
 	{/if}
 	<!-- DROPZONE -->
 	{#if node.hasOwnProperty('items')}
@@ -169,7 +168,7 @@
 			use:dndzone={{ items: node.items, flipDurationMs, centreDraggedOnCursor: true }}
 			on:consider={(e) => handleDndConsider(e, greet, node)}
 			on:finalize={(e) => handleDndFinalize(e, greet, node)}
-			
+			class={dragZoneStyle}
 		>
 			<!-- WE FILTER THE SHADOW PLACEHOLDER THAT WAS ADDED IN VERSION 0.7.4, filtering this way rather than checking whether 'nodes' have the id became possible in version 0.9.1 -->
 			{#each node.items.filter((item) => item.id !== SHADOW_PLACEHOLDER_ITEM_ID) as item (item.id)}
@@ -189,5 +188,8 @@
 		/* this will allow the dragged element to scroll the list */
 		overflow-y: auto;
 		height: auto;
+	}
+	article{
+		min-width: 300px;
 	}
 </style>
