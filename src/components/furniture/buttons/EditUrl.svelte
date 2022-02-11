@@ -8,6 +8,7 @@
         console.log('toggle initiated......editUrl:',editUrl)
 }
 </script>
-<button  on:click={toggle} class="p-1 text-gray-300">
-    <Fa  icon={faGlobe} />
-</button>   
+ 
+<button class="p-1"  on:click={toggle}>
+    <Fa  icon={faGlobe} class="text-sm text-blue-200 hover:text-red-400  active:text-red-300" />
+</button>

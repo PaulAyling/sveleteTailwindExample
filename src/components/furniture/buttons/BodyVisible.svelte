@@ -8,13 +8,9 @@
 	};
 </script>
 
-<button on:click={toggle} class="p-1 text-blue-200 cursor-auto">
-	<Fa icon={bodyVisible ? faSortDown : faSortUp} class="ml-1 mr-1 " />
+<button on:click={() => toggle()} class="p-2 text-sm text-blue-200 hover:text-red-400  active:text-red-300 ">
+	<Fa icon={bodyVisible ? faSortDown : faSortUp}  
+	class="text-sm text-blue-200 hover:text-red-400  active:text-red-300"/>
 </button>
 
-<style>
-	button:hover{
 
-	color:#F87171;
-  }
-</style>
