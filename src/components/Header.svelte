@@ -1,9 +1,9 @@
 <script>
 	export let cardId;
+	export let removeRecord
 	export let bodyVisible;
 	export let editUrl;
 	export let colorShade;
-	export let removeRecord;
 	export let cols;
 	export let toggleCols;
 	import { cards } from './stores/cards';
